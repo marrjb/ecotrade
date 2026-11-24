@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EcoTrade – Layanan Pengepulan Sampah</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="c-man" viewBox="0 0 120 200"><ellipse cx="60" cy="194" rx="36" ry="5" fill="#000" opacity=".13"/><rect x="41" y="108" width="16" height="70" rx="7" fill="#b7b2c9"/><rect x="62" y="108" width="16" height="70" rx="7" fill="#a49fba"/><rect x="36" y="173" width="24" height="11" rx="5.5" fill="#2e4a8f"/><rect x="62" y="173" width="26" height="11" rx="5.5" fill="#2e4a8f"/><ellipse cx="88" cy="68" rx="27" ry="31" fill="#5c9a45"/><path d="M80 38c5-7 17-5 19 3" stroke="#3f7a2f" stroke-width="5" fill="none" stroke-linecap="round"/><text x="88" y="77" text-anchor="middle" font-size="26" fill="#dff3c9">♻</text><rect x="34" y="52" width="50" height="62" rx="17" fill="#5b3fa8"/><rect x="76" y="44" width="13" height="38" rx="6.5" fill="#5b3fa8" transform="rotate(28 82 62)"/><circle cx="97" cy="44" r="7" fill="#f0bd94"/><rect x="22" y="58" width="13" height="46" rx="6.5" fill="#5b3fa8" transform="rotate(10 28 58)"/><circle cx="28" cy="106" r="7" fill="#f0bd94"/><rect x="53" y="45" width="15" height="12" fill="#eeb98f"/><circle cx="60" cy="33" r="17" fill="#f4c7a1"/><path d="M43 31c-1-15 9-22 18-22 10 0 18 7 17 19-5-6-13-8-21-6-6 2-10 5-14 9z" fill="#3b2a22"/><circle cx="54" cy="35" r="2" fill="#2a1d18"/><circle cx="67" cy="35" r="2" fill="#2a1d18"/><path d="M54 42q6.5 5.5 13 0" stroke="#a5503a" stroke-width="2.2" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="c-woman" viewBox="0 0 130 150"><ellipse cx="66" cy="146" rx="48" ry="5" fill="#000" opacity=".13"/><rect x="20" y="118" width="64" height="21" rx="10" fill="#3d3b78"/><rect x="74" y="98" width="21" height="42" rx="10" fill="#3d3b78"/><rect x="72" y="136" width="30" height="9" rx="4.5" fill="#ece6da"/><rect x="24" y="137" width="26" height="8" rx="4" fill="#ece6da"/><rect x="28" y="62" width="46" height="62" rx="17" fill="#e2547d"/><rect x="58" y="88" width="54" height="42" rx="5" fill="#c99358"/><path d="M58 100h54" stroke="#a97a43" stroke-width="3"/><text x="85" y="123" text-anchor="middle" font-size="20" fill="#f4e3c4">♻</text><rect x="55" y="82" width="14" height="34" rx="7" fill="#e2547d" transform="rotate(-72 62 99)"/><circle cx="97" cy="90" r="6.5" fill="#f0bd94"/><circle cx="33" cy="58" r="8" fill="#2f2420"/><circle cx="51" cy="52" r="16" fill="#f1bd95"/><path d="M34 47c2-12 12-18 23-17 10 1 16 8 16 17z" fill="#e8c13a"/><rect x="58" y="43" width="22" height="6" rx="3" fill="#cfa82c"/><circle cx="46" cy="56" r="1.9" fill="#2a1d18"/><circle cx="58" cy="56" r="1.9" fill="#2a1d18"/><path d="M46 62q6 5 12 0" stroke="#a5503a" stroke-width="2" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="c-bin" viewBox="0 0 90 110"><ellipse cx="45" cy="106" rx="30" ry="4" fill="#000" opacity=".13"/><path d="M14 38h62l-5 60a8 8 0 0 1-8 7H27a8 8 0 0 1-8-7z" fill="#7fb54a"/><path d="M10 30 72 12l4 10L14 40z" fill="#5f9a36"/><rect x="12" y="34" width="66" height="8" rx="4" fill="#6aa83c"/><circle cx="33" cy="62" r="4.5" fill="#23401a"/><circle cx="57" cy="62" r="4.5" fill="#23401a"/><circle cx="34.5" cy="60.5" r="1.4" fill="#fff"/><circle cx="58.5" cy="60.5" r="1.4" fill="#fff"/><path d="M37 72q8 8 16 0" stroke="#23401a" stroke-width="3" fill="none" stroke-linecap="round"/><text x="45" y="96" text-anchor="middle" font-size="14" fill="#e8f7d4">♻</text><circle cx="27" cy="104" r="5" fill="#2c3b2a"/><circle cx="63" cy="104" r="5" fill="#2c3b2a"/></symbol>
+</svg>
+<div id="ld"><div class="ll">♻</div><h2>EcoTrade</h2><p id="lt">Menyiapkan layanan…</p><div class="bar"><i id="bf"></i></div></div>
+<div id="hm" hidden>
+  <button class="th" id="th3" type="button" aria-label="Ganti tema terang atau gelap" style="position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px">🌙</button>
+  <div class="hw">
+    <div class="logo"><i style="background:var(--g);color:#fff">♻</i><div>EcoTrade<small>Layanan pengepulan sampah Unisba</small></div></div>
+    <div class="hero"><div><span class="pill">Terbuka untuk masyarakat umum dan sivitas Unisba</span>
+    <h1>Ubah sampah jadi <span class="hl">rupiah</span></h1>
+    <p>Tabung sampah anorganik, catat sisa makanan, dan kumpulkan jelantah dari rumah. Hitung nilainya, lalu minta penjemputan atau antar ke pengepul terdekat. Gratis untuk warga sekitar Unisba.</p>
+    <div class="hb"><button class="btn" id="hl" type="button">Masuk</button><button class="gh" id="hr" type="button">Daftar</button><button class="gh" id="hg" type="button">Lihat sebagai tamu</button><button class="gh" id="hp" type="button">Daftar sebagai mitra pengepul</button><button class="gh" id="dm1" type="button">Coba demo pengguna</button><button class="gh" id="dm2" type="button">Coba demo mitra</button><button class="gh" id="dm0" type="button">Reset demo</button></div></div>
+    <svg class="art" viewBox="0 0 380 220" role="img" aria-label="Ilustrasi warga memilah dan membawa sampah"><circle cx="318" cy="46" r="30" fill="#f3dc2f" opacity=".55"/><ellipse cx="190" cy="209" rx="180" ry="11" fill="#1b7a3d" opacity=".2"/><use href="#c-woman" x="8" y="66" width="124" height="143"/><use href="#c-man" x="122" y="40" width="100" height="167"/><use href="#c-bin" x="252" y="88" width="100" height="122"/></svg></div>
+    <div class="h3" id="hi"></div>
+    <h3 style="margin:28px 0 0">Cara kerja</h3>
+    <div class="sp4"><div><b>Pilah sampah</b>Pisahkan sampah berdasarkan jenisnya.</div><div><b>Ajukan penjemputan</b>Pilih mitra, tanggal, dan titik jemput.</div><div><b>Timbang dan catat</b>Mitra menimbang sampah dan mencatatnya di tabunganmu.</div><div><b>Dapatkan uang</b>Saldo dan poin hijau bisa ditukar hadiah.</div></div>
+    <h3 style="margin:28px 0 0">Mengapa EcoTrade</h3>
+    <div class="w4"><div class="card"><b>Terpadu 3 dalam 1</b><p class="mu">Sampah anorganik, organik, dan jelantah dalam satu pintu. Tidak perlu membuka tiga aplikasi berbeda.</p></div><div class="card"><b>Hiper-lokal tanpa gudang</b><p class="mu">EcoTrade menjadi agregator yang menghubungkan ember komunal RT, peternak maggot, dan pengepul daerah, sehingga bisa diterapkan di kota mana pun tanpa modal besar.</p></div><div class="card"><b>Celengan virtual</b><p class="mu">Pengguna tetap bisa mencatat progres harian dan melihat nilai tabungannya naik, walau sampahnya masih di rumah.</p></div><div class="card"><b>Web tanpa instal</b><p class="mu">Cukup buka tautan di Chrome atau WhatsApp. Tidak perlu mengunduh aplikasi, ringan, dan cepat.</p></div></div>
+  </div>
+</div>
+<div id="au" hidden>
+  <button class="th" id="th2" type="button" aria-label="Ganti tema terang atau gelap" style="position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px">🌙</button>
+  <div class="card lb">
+    <svg viewBox="0 0 90 110" aria-hidden="true" style="position:absolute;top:-56px;right:20px;width:56px;height:68px"><use href="#c-bin"/></svg>
+    <div class="logo"><i style="background:var(--g);color:#fff">♻</i><div>EcoTrade<small>Layanan pengepulan sampah Unisba</small></div></div>
+    <div class="tb"><button type="button" class="on" data-r="user">Pengguna</button><button type="button" data-r="admin">Mitra pengepul</button></div>
+    <form id="rf" class="lf" hidden>
+      <h3>Daftar akun baru</h3>
+      <label>Nama lengkap<input id="rn" required autocomplete="name"></label>
+      <label>No. HP atau NPM<input id="ri" required autocomplete="username"></label>
+      <label>Kata sandi<input id="rw" type="password" minlength="6" required autocomplete="new-password"></label>
+      <p class="er" id="re" role="alert"></p>
+      <button class="btn" type="submit" style="width:100%">Daftar</button>
+      <button class="gh" type="button" id="rb">Kembali ke halaman masuk</button>
+    </form>
+    <form id="mf" class="lf" hidden>
+      <h3>Daftar mitra pengepul</h3>
+      <label>Nama usaha atau bank sampah<input id="mrU" required></label>
+      <label>Nama penanggung jawab<input id="mrP" required autocomplete="name"></label>
+      <label>No. HP atau WhatsApp<input id="mrH" type="tel" required autocomplete="username"></label>
+      <label>Area layanan<select id="mrA"></select></label>
+      <label>Alamat usaha<input id="mrL" required></label>
+      <label>Armada penjemputan<select id="mrR"><option>Motor roda tiga</option><option>Mobil pickup</option><option>Truk</option><option>Belum ada, hanya terima antar sendiri</option></select></label>
+      <label>Jam operasional<input id="mrO" required placeholder="Contoh: Senin sampai Sabtu, 08.00–16.00"></label>
+      <fieldset class="qf"><legend>Menerima</legend><label><input type="checkbox" name="mjn" value="Sampah anorganik" checked>Sampah anorganik</label><label><input type="checkbox" name="mjn" value="Sampah organik (maggot)">Sampah organik untuk maggot</label><label><input type="checkbox" name="mjn" value="Minyak jelantah">Minyak jelantah</label></fieldset>
+      <label>Kata sandi<input id="mrW" type="password" minlength="6" required autocomplete="new-password"></label>
+      <p class="er" id="mrE" role="alert"></p>
+      <button class="btn" type="submit" style="width:100%">Daftar sebagai mitra</button>
+      <button class="gh" type="button" id="mb2">Kembali ke halaman masuk</button>
+    </form>
+    <form id="lf" class="lf">
+      <label><span id="ul">No. HP atau NPM</span><input id="lu" required autocomplete="username"></label>
+      <label>Kata sandi<input id="lp" type="password" required autocomplete="current-password"></label>
+      <p class="mu" id="uh">Masuk dengan NPM atau ID yang sudah kamu daftarkan.</p>
+      <p class="er" id="er" role="alert"></p>
+      <button class="btn" type="submit" style="width:100%">Masuk</button>
+      <button class="gh" type="button" id="gb">Masuk sebagai tamu</button>
+      <p class="mu ct">Belum punya akun? <button class="lk2" type="button" id="rg">Daftar</button></p>
+    </form>
+  </div>
+</div>
+<aside class="sb" id="sb">
+  <div class="logo"><i>♻</i><div>EcoTrade<small>Layanan pengepulan sampah Unisba</small></div></div>
+  <nav id="nu">
+    <a href="#dashboard" data-v="dashboard">🏠 Dashboard</a>
+    <a href="#anorganik" data-v="anorganik">🧴 Anorganik</a>
+    <a href="#organik" data-v="organik">🍃 Organik</a>
+    <a href="#jelantah" data-v="jelantah">🛢️ Jelantah</a>
+    <a href="#peta" data-v="peta">🗺️ Peta mitra</a>
+    <a href="#riwayat" data-v="riwayat">🕑 Riwayat penjemputan</a>
+    <a href="#tukar" data-v="tukar">🎁 Tukar poin</a>
+    <a href="#edukasi" data-v="edukasi">📚 Edukasi</a>
+    <a href="#harga" data-v="harga">💰 Harga sampah</a>
+  </nav>
+  <nav id="ng" hidden><a href="#dashboard" data-v="dashboard">🏠 Dashboard</a><a href="#harga" data-v="harga">💰 Harga sampah</a><a href="#ajukan" data-v="ajukan">🔒 Ajukan penjemputan</a><a href="#anorganik" data-v="anorganik">🧴 Anorganik</a><a href="#organik" data-v="organik">🍃 Organik</a><a href="#jelantah" data-v="jelantah">🛢️ Jelantah</a><a href="#edukasi" data-v="edukasi">📚 Edukasi</a><a href="#peta" data-v="peta">🗺️ Peta mitra</a></nav>
+  <nav id="na" hidden><a href="#admin" data-v="admin">📊 Dashboard admin</a><a href="#kelola" data-v="kelola">📋 Kelola permintaan</a><a href="#atur" data-v="atur">⚙️ Atur harga</a><a href="#laporan" data-v="laporan">📈 Laporan</a><a href="#peta" data-v="peta">🗺️ Peta mitra</a></nav>
+  <div class="u"><b id="un">Mahasiswa Unisba</b><span id="ur">Universitas Islam Bandung</span><br><button class="lo" id="lo" type="button">Keluar</button></div>
+</aside>
+<div class="main">
+  <header>
+    <div class="brand"><svg viewBox="0 0 90 110" aria-hidden="true"><use href="#c-bin"/></svg></div>
+    <div><h1 id="t">Dashboard</h1><small>Beranda / <span id="bc">Dashboard</span></small></div>
+    <div class="sp"></div>
+    <button class="bt" id="bl" type="button" aria-label="Notifikasi">🔔<b class="bd" id="bn" hidden>0</b></button>
+    
+    <div class="chip"><div class="av" id="av">MU</div><span id="cn">Mahasiswa Unisba</span></div>
+  </header>
+  <div class="page">
+
+  <section id="v-dashboard">
+    <div class="banner">
+      <svg class="bc" viewBox="0 0 220 120" aria-hidden="true"><use href="#c-woman" x="4" y="20" width="87" height="100"/><use href="#c-man" x="88" y="0" width="72" height="120"/><use href="#c-bin" x="142" y="27" width="76" height="93"/></svg>
+      <h2 id="bh">Selamat datang di EcoTrade</h2>
+      <p id="bp">Pilah sampahmu, jadwalkan penjemputan, dan tukar jadi saldo serta poin hijau. Bersama menjaga kampus Unisba tetap bersih dan asri.</p>
+      <a class="btn" id="bb" href="#ajukan">Ajukan penjemputan</a>
+    </div>
+    <div class="wl" id="wl" hidden>
+      <svg class="wl-art" viewBox="0 0 90 110" aria-hidden="true"><use href="#c-bin"/></svg>
+      <div class="wl-top"><span>Saldo tabungan</span><button class="wl-eye" id="we" type="button" aria-label="Tampilkan atau sembunyikan saldo">👁️</button></div>
+      <div class="wl-bal" id="wb">Rp0</div>
+      <div class="wl-row"><div><small>Poin hijau</small><b id="wp">0</b></div><div><small>Sampah ditabung</small><b id="ws">0 kg</b></div><div><small>Jelantah</small><b id="wj">0 L</b></div></div>
+      <div class="wl-next" id="wn"></div>
+    </div>
+    <div class="card" id="qm" style="margin-bottom:18px"><h3>Menu penting</h3><div class="qa"><a href="#ajukan"><i>🚛</i>Jemput</a><a href="#tukar" data-u><i>🎁</i>Tukar poin</a><a href="#riwayat" data-u><i>🕑</i>Riwayat</a><a href="#harga"><i>💰</i>Harga</a><a href="#peta"><i>🗺️</i>Peta mitra</a><a href="#edukasi"><i>📚</i>Edukasi</a><button type="button" data-nf><i>🔔</i>Notifikasi</button><a href="#dashboard" data-bg data-u><i>🏅</i>Lencana</a></div></div>
+    <div class="ms"><svg class="mb" viewBox="0 0 90 110" aria-hidden="true"><use href="#c-bin"/></svg><button class="bub" id="bub" type="button" aria-live="polite"></button></div>
+    <div class="card" id="pa" style="margin-bottom:18px" hidden></div>
+    <div class="g4" id="stats"></div>
+    <div class="card" id="co" style="margin-bottom:18px"></div>
+    <div class="card" id="sm" style="margin-bottom:18px"></div>
+    <div class="card" id="bg" style="margin-bottom:18px" hidden></div>
+    <div class="card" id="tw" style="margin-bottom:18px" hidden></div>
+    <div class="card" id="nm" style="margin-bottom:18px" hidden></div>
+    <div class="card" id="fd" style="margin-bottom:18px" hidden></div>
+    <div class="g2">
+      <div class="card"><h3>Sampah terkumpul per bulan (kg)</h3><svg id="ch" viewBox="0 0 360 170" width="100%" role="img" aria-label="Grafik sampah terkumpul per bulan"></svg></div>
+      <div class="card"><h3>Jadwal rutin dan pengumuman</h3>
+        <ul class="ls">
+          <li><b>Selasa dan Jumat</b><span class="mu">Penjemputan rutin di Kampus Tamansari</span></li>
+          <li><b>Kamis</b><span class="mu">Penjemputan rutin di Kampus Ranggamalela dan Purnawarman</span></li>
+          <li><b>Kampanye Unisba Hijau</b><span class="mu">Setiap 1 kg sampah terpilah bernilai 10 poin hijau.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" id="rcc"><h3>Permintaan terbaru</h3><div class="tw"><table><thead><tr><th>Kode</th><th>Jadwal</th><th>Lokasi</th><th>Berat</th><th>Nilai</th><th>Status</th></tr></thead><tbody id="rc"></tbody></table></div></div>
+  </section>
+
+  <section id="v-ajukan" hidden>
+    <div class="card" id="gt" hidden><svg class="mb" viewBox="0 0 90 110" aria-hidden="true" style="float:right;margin-left:12px"><use href="#c-bin"/></svg><h3>Daftar dulu untuk mengajukan penjemputan</h3><p class="mu">Kamu sedang masuk sebagai tamu. Buat akun agar permintaan penjemputan, riwayat, saldo, dan poin hijau tersimpan atas namamu.</p><button class="btn" type="button" data-reg>Daftar sekarang</button></div>
+    <div class="card">
+      <h3>Formulir penjemputan sampah</h3>
+        <p class="mu">Penjemputan tanpa biaya tunai dengan syarat minimal 5 kg sampah anorganik atau 5 liter jelantah. Ongkir Rp5.000 dipotong dari nilai sampah, dan gratis ongkir mulai 10 kg atau 10 liter. Jumlah lebih kecil: terus menabung atau antar sendiri (lihat tab Anorganik).</p>
+      <form id="f">
+        <div class="fg">
+          <label>Nama lengkap<input name="nama" required placeholder="Nama sesuai KTM"></label>
+          <label>No. HP atau NPM<input name="npm" required placeholder="Contoh: 0812xxxxxxxx"></label>
+          <label>No. WhatsApp<input name="hp" type="tel" required placeholder="08xxxxxxxxxx"></label>
+          <label>Area penjemputan<select name="area"><option>Kampus Tamansari</option><option>Kampus Ranggamalela</option><option>Kampus Purnawarman</option><option>Kos atau asrama sekitar kampus</option><option>Rumah atau lingkungan warga sekitar kampus</option></select></label>
+          <label class="w2">Titik jemput<input name="alamat" required placeholder="Contoh: Gedung kuliah lantai 1, dekat tempat parkir"></label>
+          <label class="w2">Mitra pengepul<select name="mitra" id="mt"></select></label>
+          <div class="mu" id="mti" style="grid-column:1/-1;margin-top:-6px"></div>
+          <label>Tanggal<input name="tgl" type="date" required></label>
+          <label>Waktu<select name="jam"><option>09.00–11.00</option><option>13.00–15.00</option></select></label>
+        </div>
+        <h3>Jenis sampah dan perkiraan berat (kg)</h3>
+        <div class="fg" id="items"></div>
+        <div class="est">Estimasi: <b id="ek">0 kg</b> dengan nilai <b id="en">Rp0</b></div>
+        <button class="btn" type="submit">Kirim permintaan</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="v-riwayat" hidden>
+    <div class="card" id="tl" style="margin-bottom:14px"></div>
+    <div class="card"><h3>Riwayat penjemputan</h3><div class="tw"><table><thead><tr><th>Kode</th><th>Jadwal</th><th>Lokasi</th><th>Berat</th><th>Nilai</th><th>Status</th><th></th></tr></thead><tbody id="hs"></tbody></table></div></div>
+  </section>
+
+  <section id="v-admin" hidden>
+    <div class="banner"><h2 id="abh">Selamat datang Mitra Pengepul di EcoTrade</h2><p>Pantau permintaan masuk, atur jadwal penjemputan, dan perbarui harga pengepulan dari sini.</p><a class="btn" href="#kelola">Kelola permintaan</a></div>
+    <div class="wl" id="mw">
+      <svg class="wl-art" viewBox="0 0 120 200" aria-hidden="true" style="width:40px;height:66px;right:22px"><use href="#c-man"/></svg>
+      <div class="wl-top"><span>Nilai sampah diproses</span><button class="wl-eye" id="me" type="button" aria-label="Tampilkan atau sembunyikan nilai">👁️</button></div>
+      <div class="wl-bal" id="mb3">Rp0</div>
+      <div class="wl-row"><div><small>Permintaan baru</small><b id="mq">0</b></div><div><small>Dijadwalkan</small><b id="md2">0</b></div><div><small>Rating warga</small><b id="mg2">-</b></div></div>
+      <div class="wl-act" style="grid-template-columns:minmax(0,1fr)"><button type="button" id="mo"><i>🟢</i>Buka</button></div>
+    </div>
+    <div class="card" style="margin-bottom:18px"><h3>Menu penting</h3><div class="qa"><a href="#kelola"><i>📋</i>Permintaan</a><a href="#laporan"><i>📈</i>Laporan</a><a href="#atur"><i>⚙️</i>Atur harga</a><a href="#peta"><i>🗺️</i>Peta mitra</a><button type="button" data-nf><i>🔔</i>Notifikasi</button><a href="#atur"><i>🏪</i>Profil usaha</a></div></div>
+    <div class="g4" id="as"></div>
+    <div class="g2"><div class="card"><h3>Jadwal penjemputan</h3><div id="jd"></div></div><div class="card"><h3>Ember RT perlu dijemput</h3><div id="em"></div></div></div>
+    <div class="card" id="rv" style="margin-bottom:18px"></div>
+    <div class="card" id="mc" style="margin-bottom:18px"></div>
+    <div class="card" id="fm" style="margin-bottom:18px" hidden></div>
+    <div class="card" id="pmt"><h3>Permintaan menunggu tindakan</h3><div class="tw"><table><thead><tr><th>Kode</th><th>Pemohon</th><th>Jadwal</th><th>Lokasi</th><th>Muatan</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="aq"></tbody></table></div></div>
+  </section>
+
+  <section id="v-kelola" hidden>
+    <div class="card"><h3>Permintaan penjemputan masuk</h3><div class="tw"><table><thead><tr><th>Kode</th><th>Pemohon</th><th>Jadwal</th><th>Lokasi</th><th>Muatan</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="ak"></tbody></table></div></div>
+  </section>
+
+  <section id="v-atur" hidden>
+    <div class="card"><h3>Atur harga pengepulan usahamu</h3><p class="mu" style="margin:0 0 12px">Harga ini tampil di perbandingan harga mitra untuk warga dan dipakai menghitung nilai permintaan yang masuk ke usahamu.</p><div class="fg" id="ap"></div><button class="btn" id="sh" type="button">Simpan harga</button></div>
+    <div class="card" id="pf" style="margin-top:14px"></div>
+  </section>
+
+  <section id="v-peta" hidden>
+    <div class="g2">
+      <div class="card"><h3>Peta mitra pengepul sekitar kampus</h3>
+        <svg id="mp" viewBox="0 0 400 300" width="100%" role="group" aria-label="Peta skematis mitra pengepul"></svg>
+        <p class="mu">Peta skematis dengan data mitra contoh. Pilih penanda untuk melihat detail dan jalur ke kampus yang dilayani. <a href="https://www.google.com/maps/search/?api=1&amp;query=Universitas+Islam+Bandung" target="_blank" rel="noopener">Buka area Unisba di Google Maps</a></p>
+      </div>
+      <div class="card"><h3>Daftar mitra pengepul</h3><ul class="ls" id="ml"></ul><div id="md"></div></div>
+    </div>
+  </section>
+
+  <section id="v-anorganik" hidden>
+    <div class="g2">
+      <div class="card"><h3>Kalkulator Trash-to-Cash</h3>
+        <div class="fg"><label>Jenis sampah<select id="at"></select></label><label>Berat (kg)<input id="aw" type="number" min="0" step="0.1" placeholder="0"></label></div>
+        <div class="est">Estimasi nilai: <b id="av2">Rp0</b> <span class="mu" id="ah"></span></div>
+        <button class="btn" id="ab" type="button">Tambah ke tabungan</button>
+        <p class="mu">Harga acuan dari data Bank Sampah Bersinar dan bank sampah lain. Hanya simulasi, harga di lapangan berubah-ubah.</p></div>
+      <div class="card"><h3>Tabungan sampah di rumah</h3><div class="pg"><i id="ap2"></i></div><p id="am"></p><ul class="ls" id="al"></ul><div id="aa"></div><button class="lk" id="ac" type="button">Kosongkan tabungan</button></div>
+    </div>
+    <div class="card" id="cmp" style="margin-bottom:18px"></div>
+    <div class="card"><h3>Antar sendiri: pengepul terdekat dari rumahmu</h3>
+      <label style="display:flex;flex-direction:column;gap:5px;font-weight:600;font-size:13px;max-width:360px;margin-bottom:8px">Area rumah<select id="ar"></select></label><ul class="ls" id="an"></ul></div>
+  </section>
+
+  <section id="v-organik" hidden>
+    <div class="g2">
+      <div class="card"><h3>Catatan Trash-to-Feed</h3>
+        <p class="mu">Buang sisa makanan setiap hari ke ember komposter komunal RT, lalu catat volumenya di sini untuk mendapat poin peduli lingkungan.</p>
+        <div class="fg"><label>Ember komunal RT<input id="or" placeholder="Ketik RT kamu, contoh: RT 03 RW 05" autocomplete="off"></label><label>Sisa makanan hari ini (kg)<input id="ok" type="number" min="0" step="0.1" placeholder="0"></label></div>
+        <div class="est" id="oe"></div>
+        <p id="osk" style="margin:0 0 12px"></p>
+        <button class="btn" id="ob" type="button">Catat dan buang ke ember RT</button></div>
+      <div class="card"><h3>Status ember RT</h3><div class="pg"><i id="op"></i></div><p id="om"></p><p class="mu">Sistem menjumlahkan input semua warga di RT yang sama. Begitu total menyentuh kuota 20 kg, notifikasi penjemputan terkirim otomatis ke peternak maggot, tanpa sensor fisik sehingga biaya infrastrukturnya nol rupiah.</p><button class="lk" id="osw" type="button">Simulasi: warga lain menyetor</button> <button class="lk" id="os" type="button">Simulasi: peternak menjemput</button>
+        <label style="display:flex;gap:8px;align-items:center;font-weight:600;font-size:13px;margin:12px 0"><input type="checkbox" id="kt" style="width:auto"> Saya Ketua RT ini</label><div id="ktp"></div>
+        <h3 style="margin-top:16px">Notifikasi ke peternak maggot</h3><ul class="ls" id="on"></ul></div>
+    </div>
+    <div class="card"><h3>Catatan 7 hari terakhir (kg, per tanggal)</h3><svg id="oc" viewBox="0 0 360 170" width="100%" role="img" aria-label="Grafik sisa makanan harian"></svg><p class="mu" id="ot"></p></div>
+  </section>
+
+  <section id="v-jelantah" hidden>
+    <div class="g2">
+      <div class="card"><h3>Celengan Waste-to-Energy</h3>
+        <div style="display:flex;gap:18px;align-items:flex-end"><div class="jar" aria-hidden="true"><i id="jf"></i></div><div><p id="jm" style="margin:0"></p><p class="mu" id="jv" style="margin:4px 0 0"></p></div></div>
+        <div class="fg" style="margin-top:14px"><label>Jelantah hari ini (liter)<input id="jl" type="number" min="0" step="0.1" placeholder="0"></label></div>
+        <button class="btn" id="jb" type="button">Tambah ke celengan</button><div id="ja" style="margin-top:12px"></div></div>
+      <div class="card"><h3>Nilai jelantahmu</h3><ul class="ls" id="jn"></ul><p class="mu">Biodiesel dihitung dari acuan HIP ESDM November 2026 (Rp14.312 per liter) dikali rendemen 90%. Harga beli pengepul hanya simulasi karena pasar jelantah berfluktuasi.</p></div>
+    </div>
+  </section>
+
+  <section id="v-tukar" hidden>
+    <div class="card" id="sdc" style="margin-bottom:14px"><h3>Cairkan saldo atau sedekah sampah</h3>
+      <p style="margin:0 0 10px">Saldo tersedia: <b id="sdv">Rp0</b></p>
+      <div class="fg"><label>Tujuan<select id="sdt"><option>DANA</option><option>OVO</option><option>GoPay</option><option>ShopeePay</option><option>Sedekah: masjid dan musala sekitar kampus</option><option>Sedekah: kebersihan lingkungan RT</option><option>Sedekah: beasiswa mahasiswa kurang mampu</option></select></label><label>Nominal (Rp)<input id="sdn" type="number" min="10000" step="1000" placeholder="Minimal 10000"></label><label class="w2" id="sdh">Nomor e-wallet<input id="sdp" type="tel" placeholder="08xxxxxxxxxx"></label></div>
+      <button class="btn" id="sdb" type="button">Proses</button>
+      <p class="mu">Simulasi untuk prototipe, tidak ada uang sungguhan yang berpindah. Sedekah memberi bonus 1 poin per Rp1.000.</p>
+      <ul class="ls" id="sdl"></ul></div>
+    <div class="g2">
+      <div class="card"><h3>Tukar poin hijau</h3><p>Poin tersedia: <b id="pt">0</b></p><div id="rw2"></div></div>
+      <div class="card"><h3>Peringkat RT (kg organik)</h3><div id="lb"></div><p class="mu">Dihitung dari setoran ember RT yang tercatat di aplikasi.</p></div>
+    </div>
+  </section>
+
+  <section id="v-edukasi" hidden>
+    <div class="g2">
+      <div class="card"><h3>Panduan memilah sampah</h3><div id="gd"></div></div>
+      <div class="card"><h3>Kuis singkat</h3><div id="qz"></div></div>
+    </div>
+  </section>
+
+  <section id="v-laporan" hidden>
+    <div class="g2">
+      <div class="card"><h3>Sampah selesai per bulan (kg)</h3><svg id="rbc" viewBox="0 0 360 170" width="100%" role="img" aria-label="Grafik sampah per bulan"></svg></div>
+      <div class="card"><h3>Rekap per mitra</h3><div class="tw"><table style="min-width:320px"><thead><tr><th>Mitra</th><th>Permintaan</th><th>Berat</th></tr></thead><tbody id="rm"></tbody></table></div></div>
+    </div>
+    <div class="card"><h3>Ekspor data</h3><button class="btn" id="cs" type="button">Salin CSV</button><textarea id="ct" readonly rows="5" aria-label="Data CSV" style="width:100%;margin-top:10px;font:12px monospace;padding:8px;border:1px solid var(--bd);border-radius:9px;background:var(--in);color:var(--tx)"></textarea></div>
+  </section>
+
+  <section id="v-tentang" hidden>
+    <div class="g2">
+      <div class="card"><h3>Tentang EcoTrade</h3><p>EcoTrade menghubungkan warga dengan mitra pengepul untuk tiga limbah rumah tangga sekaligus: anorganik, organik, dan jelantah, dalam satu pintu dan tanpa instal aplikasi.</p><div class="bgs" id="tdv"></div></div>
+      <div class="card"><h3>Selaras dengan SDG</h3><ul class="ls"><li><b>SDG 11</b><span class="mu">Kota dan permukiman berkelanjutan lewat ember komunal RT dan pengepul lokal.</span></li><li><b>SDG 12</b><span class="mu">Konsumsi dan produksi bertanggung jawab lewat memilah dan mendaur ulang.</span></li><li><b>SDG 13</b><span class="mu">Penanganan perubahan iklim lewat emisi yang dihemat dari daur ulang dan jelantah.</span></li></ul></div>
+    </div>
+    <div class="card"><h3>Model bisnis ringkas</h3><ul class="ls"><li><b>Agregator hiper-lokal</b><span class="mu">Tidak membangun gudang atau armada. EcoTrade menghubungkan warga, ember RT, peternak maggot, dan pengepul yang sudah ada.</span></li><li><b>Infrastruktur nol rupiah</b><span class="mu">Kepenuhan ember dihitung dari penjumlahan input warga, tanpa sensor fisik.</span></li><li><b>Pendapatan</b><span class="mu">Potongan ongkir penjemputan di bawah kuota, dan kemitraan dengan pengepul.</span></li></ul><p style="margin:12px 0 0"><button class="gh" id="tr0" type="button" style="width:auto">Ulangi tur bersama Si Tong</button></p></div>
+  </section>
+
+  <section id="v-harga" hidden>
+    <div class="card"><h3>Daftar harga pengepulan</h3>
+      <div class="tw"><table><thead><tr><th>Jenis sampah</th><th>Harga per kg</th><th>Poin hijau per kg</th></tr></thead><tbody id="pr"></tbody></table></div>
+      <ul class="tip"><li>Pisahkan sampah kering dan basah sebelum dijemput.</li><li>Bilas botol dan kaleng agar tidak berbau.</li><li>Ratakan kardus dan lepaskan lakban supaya nilainya maksimal.</li></ul>
+      <p class="mu">Harga acuan dari data Bank Sampah Bersinar (PET, aluminium) dan bank sampah lain (kardus, plastik kemasan, kaca). Hanya simulasi dan bisa berbeda di lapangan. Setiap mitra dapat menetapkan harganya sendiri, bandingkan di tab Anorganik.</p>
+    </div>
+  </section>
+
+  </div>
+  <footer>© 2026 EcoTrade. Prototipe layanan pengepulan sampah, bukan situs resmi Unisba.</footer>
+</div>
+<div id="np" hidden><div id="npb"></div></div>
+<nav id="fb" aria-label="Menu utama"></nav>
+<div id="mx" hidden><div class="mxb" id="mxb"></div></div>
+<div id="cm" hidden><div class="mxb" id="cmb"></div></div>
+<div id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s);
+const P={"Botol plastik PET bening":3900,"Gelas plastik bening":4250,"Plastik kemasan":1500,"Kardus":1300,"Kaleng aluminium":10000,"Botol kaca":200};
+const MIN=5,JMIN=5,JL=6000,HIP=14312,MG=0.2,MP=7000,EMB=20,FREE=10,ONG=5000;
+const ogf=(kg,L)=>(kg>=MIN||L>=JMIN)&&!(kg>=FREE||L>=FREE)?ONG:0;
+const K=Object.keys(P),KEY="ugc-requests";
+try{Object.assign(P,JSON.parse(localStorage.getItem("ugc-prices")||"{}"))}catch(e){}
+const seed=[
+{id:"GC-1005",tgl:"2026-11-14",jam:"09.00–11.00",area:"Kampus Tamansari",alamat:"Lobi gedung kuliah",kg:6,nilai:19000,status:"Dijadwalkan"},
+{id:"GC-1004",tgl:"2026-11-04",jam:"09.00–11.00",area:"Kampus Tamansari",alamat:"Lobi gedung kuliah",kg:14.5,nilai:48250,status:"Selesai"},
+{id:"GC-1003",tgl:"2026-10-21",jam:"13.00–15.00",area:"Kos atau asrama sekitar kampus",alamat:"Jl. Tamansari",kg:8,nilai:21000,status:"Selesai"},
+{id:"GC-1002",tgl:"2026-10-07",jam:"09.00–11.00",area:"Kampus Ranggamalela",alamat:"Area parkir",kg:22,nilai:61500,status:"Selesai"}];
+let R=null;try{R=JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){}
+if(!Array.isArray(R))R=seed;
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(R))}catch(e){}};
+const rp=n=>"Rp"+Math.round(n).toLocaleString("id-ID");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fd=t=>new Date(t+"T00:00").toLocaleDateString("id-ID",{day:"numeric",month:"short",year:"numeric"});
+const BC={Menunggu:"w",Dijadwalkan:"i",Dijemput:"i",Selesai:"s",Dibatalkan:"x"};
+const rows=(l,a)=>l.map(r=>`<tr><td><b>${r.id}</b></td><td>${fd(r.tgl)}<br><span class="mu">${r.jam}</span></td><td>${esc(r.area)}${r.mitra?`<br><span class="mu">Mitra: ${esc(r.mitra)}</span>`:""}${r.alamat?`<br><span class="mu">${esc(r.alamat)}</span>`:""}</td><td>${r.kg} kg${r.l?` + ${r.l} L jelantah`:""}</td><td>${rp(r.nilai)}${r.ong?`<br><span class="mu">setelah ongkir ${rp(r.ong)}</span>`:""}</td><td><span class="b ${BC[r.status]}">${r.status}</span></td>${a?`<td><button class="lk ok" data-t="${r.id}">Lacak</button>${r.mitra?`<button class="lk ok" data-chat="${r.id}">Chat</button>`:""}${r.status==="Menunggu"?`<button class="lk" data-c="${r.id}">Batalkan</button>`:""}</td>`:""}</tr>`).join("");
+function toast(m){const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",3800)}
+const act=r=>r.status==="Menunggu"?`<button class="lk ok" data-a="jd" data-id="${r.id}">Jadwalkan</button><button class="lk" data-a="tl" data-id="${r.id}">Tolak</button>`:r.status==="Dijadwalkan"?`<button class="lk ok" data-a="jm" data-id="${r.id}">Tandai dijemput</button>`:r.status==="Dijemput"?`<button class="lk ok" data-a="sl" data-id="${r.id}">Tandai selesai</button>`:"";
+const arows=l=>l.map(r=>`<tr><td><b>${r.id}</b></td><td>${esc(r.nama||"Mahasiswa")}</td><td>${fd(r.tgl)}<br><span class="mu">${r.jam}</span></td><td>${esc(r.area)}<br><span class="mu">${esc(r.alamat||"")}</span>${r.mitra?`<br><span class="mu">Mitra: ${esc(r.mitra)}</span>`:""}</td><td>${r.kg} kg${r.l?`<br>${r.l} L jelantah`:""}<br><span class="mu">${rp(r.nilai)}</span></td><td><span class="b ${BC[r.status]}">${r.status}</span></td><td>${act(r)}<button class="lk ok" data-chat="${r.id}">Chat</button></td></tr>`).join("");
+function renderA(){
+  const Q=RA();const c=s=>Q.filter(r=>r.status===s).length,kg=Q.filter(r=>r.status==="Selesai").reduce((a,r)=>a+r.kg,0),w=Q.filter(r=>r.status==="Menunggu");
+  $("#as").innerHTML=[["📥",Q.length,"Total permintaan"],["⏳",c("Menunggu"),"Menunggu tindakan"],["🚛",c("Dijadwalkan"),"Dijadwalkan"],["♻️",kg.toFixed(1)+" kg","Sampah selesai dikumpulkan"]].map(s=>`<div class="card st"><i>${s[0]}</i><div><b>${s[1]}</b><span>${s[2]}</span></div></div>`).join("");
+  $("#aq").innerHTML=w.length?arows(w):`<tr><td colspan="7">Tidak ada permintaan yang menunggu tindakan.</td></tr>`;
+  $("#ak").innerHTML=arows(Q);
+}
+const ls=k=>{try{return+localStorage.getItem(k)||0}catch(e){return 0}},lsSet=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const PT=()=>Math.round(R.filter(r=>r.status==="Selesai").reduce((a,r)=>a+r.kg,0)*10)+ls("ugc-bn")-ls("ugc-sp");
+const eco=kg=>[kg*1.5,kg*1.5/21];
+const RW=[["Voucher kantin Rp10.000",500],["Pulsa Rp10.000",600],["Tumbler Unisba Hijau",1000],["Bibit tanaman",300]];
+let tid=null;
+function drawRW(){const p=PT();$("#pt").textContent=p;$("#rw2").innerHTML=RW.map((r,i)=>`<div class="rw"><div><b>${r[0]}</b><br><span class="mu">${r[1]} poin</span></div><button class="btn" data-rw="${i}" ${p<r[1]?"disabled":""}>Tukar</button></div>`).join("")}
+function track(){
+  const r=R.find(x=>x.id===tid)||R[0],el=$("#tl");
+  if(!r){el.innerHTML=`<h3>Lacak penjemputan</h3><p class="mu">Belum ada permintaan.</p>`;return}
+  const st=["Diajukan","Dijadwalkan","Dijemput","Selesai"],i={Menunggu:0,Dijadwalkan:1,Dijemput:2,Selesai:3}[r.status];
+  el.innerHTML=`<h3>Lacak ${r.id}</h3>`+(i===undefined?`<p class="mu">Permintaan ini dibatalkan.</p>`:`<div class="tr">${st.map((s,n)=>`<div class="${n<=i?"on":""}"><i>${n<i?"✓":n+1}</i><span>${s}</span></div>`).join("")}</div>`)+rateUI(r)+chatUI(r);
+}
+function bars(s,D){const mx=Math.max(1,...D.map(d=>d[1])),w=330/Math.max(D.length,1),bw=Math.min(40,w-12);$(s).innerHTML=D.map((d,i)=>{const h=d[1]/mx*105,x=15+i*w+(w-bw)/2,y=135-h;return `<rect x="${x}" y="${y}" width="${bw}" height="${h}" rx="5" style="fill:var(--g)"/><text x="${x+bw/2}" y="${y-6}" text-anchor="middle" font-size="11" style="fill:var(--tx)">${d[1]||""}</text><text x="${x+bw/2}" y="154" text-anchor="middle" font-size="11" style="fill:var(--mu)">${d[0]}</text>`}).join("")}
+function renderR(){
+  const mo={},mi={};
+  RA().forEach(r=>{if(r.status==="Selesai"){const k=r.tgl.slice(0,7);mo[k]=(mo[k]||0)+r.kg}if(r.status!=="Dibatalkan"){const k=r.mitra||"Tanpa mitra",o=mi[k]||(mi[k]=[0,0]);o[0]++;o[1]+=r.kg}});
+  bars("#rbc",Object.keys(mo).sort().map(k=>[new Date(k+"-01T00:00").toLocaleDateString("id-ID",{month:"short"}),+mo[k].toFixed(1)]));
+  $("#rm").innerHTML=Object.keys(mi).map(k=>`<tr><td>${esc(k)}</td><td>${mi[k][0]}</td><td>${mi[k][1].toFixed(1)} kg</td></tr>`).join("");
+  const q=s=>'"'+String(s==null?"":s).replace(/"/g,'""')+'"';
+  $("#ct").value=["kode,pemohon,tanggal,jam,area,mitra,berat_kg,nilai_rp,status",...RA().map(r=>[r.id,r.nama||"",r.tgl,r.jam,r.area,r.mitra||"",r.kg,r.nilai,r.status].map(q).join(","))].join("\n");
+}
+function impact(){
+  const d=R.filter(r=>r.status==="Selesai"),kg=d.reduce((a,r)=>a+r.kg,0);
+  $("#hi").innerHTML=[["🗑️",kg.toFixed(1)+" kg","Sampah terkumpul"],["🚛",d.length,"Penjemputan selesai"],["🌍",eco(kg)[0].toFixed(0)+" kg CO₂","Perkiraan emisi dihemat"]].map(s=>`<div class="card st"><i>${s[0]}</i><div><b>${s[1]}</b><span>${s[2]}</span></div></div>`).join("");
+}
+function render(){renderA();
+  const d=R.filter(r=>r.status==="Selesai"),kg=d.reduce((a,r)=>a+r.kg,0),sd=d.reduce((a,r)=>a+r.nilai,0);
+  const S=[["🗑️",kg.toFixed(1)+" kg","Sampah terkumpul"],["📦",R.length,"Total permintaan"],["🌍",eco(kg)[0].toFixed(0)+" kg","CO₂ dihemat"],["✅",d.length,"Penjemputan selesai"]];
+  $("#stats").innerHTML=S.map(s=>`<div class="card st"><i>${s[0]}</i><div><b>${s[1]}</b><span>${s[2]}</span></div></div>`).join("");
+  $("#rc").innerHTML=rows(R.slice(0,4),false);
+  const E=eco(kg);$("#co").innerHTML=`<h3>Dampak lingkungan</h3><b>${E[0].toFixed(0)} kg CO₂</b> perkiraan emisi yang dihemat, setara penyerapan karbon sekitar <b>${E[1].toFixed(1)} pohon</b> selama setahun.<p class="mu" style="margin:8px 0 0">Estimasi sederhana: 1,5 kg CO₂ per kg sampah dan 21 kg CO₂ per pohon per tahun.</p>`;
+  track();renderR();drawRW();
+  $("#hs").innerHTML=R.length?rows(R,true):`<tr><td colspan="7">Belum ada permintaan. Pilih Ajukan penjemputan untuk memulai.</td></tr>`;
+}
+function chart(){
+  const M=[["Jun",42],["Jul",58],["Agu",51],["Sep",73],["Okt",66],["Nov",88]];
+  $("#ch").innerHTML=M.map((m,i)=>{const h=m[1]*1.15,x=18+i*57,y=135-h;return `<rect x="${x}" y="${y}" width="38" height="${h}" rx="5" style="fill:var(--g)"/><text x="${x+19}" y="${y-6}" text-anchor="middle" font-size="11" style="fill:var(--tx)">${m[1]}</text><text x="${x+19}" y="154" text-anchor="middle" font-size="11" style="fill:var(--mu)">${m[0]}</text>`}).join("");
+}
+function est(){let kg=0,n=0;K.forEach((k,i)=>{const v=parseFloat($("#k"+i).value)||0;kg+=v;n+=v*hrg(k)});const L=parseFloat($("#kj").value)||0;n+=L*JL;$("#ek").textContent=kg.toFixed(1)+" kg"+(L?" + "+L+" L jelantah":"");const og=ogf(kg,L);$("#en").textContent=rp(n)+(og?" dikurangi ongkir "+rp(og)+", diterima "+rp(Math.max(0,n-og)):(kg>=MIN||L>=JMIN?" (gratis ongkir)":""));return[kg,n,L]}
+function drawP(){$("#items").innerHTML=K.map((k,i)=>`<label>${k} (${rp(P[k])}/kg)<input id="k${i}" type="number" min="0" step="0.5" placeholder="0"></label>`).join("")+`<label>Minyak jelantah (${rp(JL)}/liter)<input id="kj" type="number" min="0" step="0.5" placeholder="0"></label>`;
+$("#pr").innerHTML=K.map(k=>`<tr><td>${k}</td><td>${rp(P[k])}</td><td>10</td></tr>`).join("");
+  $("#ap").innerHTML=K.map((k,i)=>`<label>${k} (Rp per kg)<input id="p${i}" type="number" min="0" step="100" value="${hrgM(k)}"></label>`).join("");
+}
+drawP();
+$("#items").addEventListener("input",est);
+const f=$("#f"),tn=new Date();tn.setMinutes(tn.getMinutes()-tn.getTimezoneOffset());f.tgl.min=tn.toISOString().slice(0,10);
+f.addEventListener("submit",e=>{
+  e.preventDefault();if(!S||S.role!=="user")return;const [kg,n,L]=est();
+  if(kg<=0&&L<=0){toast("Isi berat sampah atau volume jelantah.");return}
+  if(kg<MIN&&L<JMIN){toast("Penjemputan ke rumah minimal "+MIN+" kg sampah atau "+JMIN+" liter jelantah. Jumlah lebih kecil bisa diantar sendiri ke pengepul terdekat.");return}
+  {const mv=new FormData(f).get("mitra");if(!/^Otomatis/.test(mv)){const m=M.find(x=>norm(x.n)===norm(mv));if(m){if(CL[m.n]){toast(m.n.replace(/&amp;/g,"&")+" sedang tutup. Pilih mitra lain atau mitra Otomatis.");return}if(kg>0&&!anM(m.j)){toast("Mitra ini tidak menerima sampah anorganik.");return}if(L>0&&!/jelantah/i.test(m.j)){toast("Mitra ini tidak menerima minyak jelantah.");return}}}}
+  const d=new FormData(f),id="GC-"+(Math.max(1000,...R.map(r=>+r.id.slice(3)))+1);
+  R.unshift({id,nama:d.get("nama"),mitra:/^Otomatis/.test(d.get("mitra"))?near(d.get("area"),kg<=0):d.get("mitra"),l:L||0,tgl:d.get("tgl"),jam:d.get("jam"),area:d.get("area"),alamat:d.get("alamat"),kg:+kg.toFixed(1),nilai:Math.max(0,Math.round(n-ogf(kg,L))),ong:ogf(kg,L),status:"Menunggu"});
+  save();render();notify("Permintaan "+id+" terkirim dan diteruskan ke "+R[0].mitra+".","user");notify("Permintaan baru "+id+" dari "+d.get("nama")+" ("+R[0].kg+" kg"+(L?" + "+L+" L jelantah":"")+").","admin",R[0].mitra);toast("Permintaan "+id+" terkirim. Alamat dan titik jemputmu diteruskan ke "+R[0].mitra+".");if(kg>0)clearStash();if(L>0)clearJL();f.reset();f.npm.value=S.id;f.nama.value=S.nama;est();location.hash="riwayat";
+});
+$("#hs").addEventListener("click",e=>{const c=e.target.dataset.c;if(!c)return;const r=R.find(x=>x.id===c);if(r){r.status="Dibatalkan";save();render();notify("Permintaan "+c+" dibatalkan oleh pemohon.","admin",r.mitra);toast("Permintaan "+c+" dibatalkan.")}});
+const NAV={user:["dashboard","anorganik","organik","jelantah","ajukan","peta","tukar","edukasi","riwayat","harga","tentang"],admin:["admin","kelola","laporan","atur","peta","tentang"],guest:["dashboard","anorganik","organik","jelantah","harga","edukasi","ajukan","peta","tentang"]},T={dashboard:"Dashboard",ajukan:"Ajukan penjemputan",riwayat:"Riwayat penjemputan",harga:"Harga sampah",admin:"Dashboard mitra",kelola:"Kelola permintaan",atur:"Atur harga",peta:"Peta mitra pengepul",tukar:"Tukar poin hijau",edukasi:"Edukasi pilah sampah",laporan:"Laporan mitra",tentang:"Tentang EcoTrade",anorganik:"Anorganik",organik:"Organik",jelantah:"Jelantah"};
+function route(){
+  if(!S)return;const V=NAV[S.role],h=location.hash.slice(1),v=V.includes(h)?h:V[0];
+  document.querySelectorAll("section").forEach(s=>s.hidden=s.id!=="v-"+v);
+  document.querySelectorAll(".sb nav a").forEach(a=>a.classList.toggle("on",a.dataset.v===v));
+  document.querySelectorAll("#fb a,#mxb a").forEach(a=>a.classList.toggle("on",a.dataset.v===v));
+  if($("#mxo")){$("#mxo").classList.toggle("on",!BARS[S.role].some(x=>x[0]===v));$("#mx").hidden=true}
+  $("#t").textContent=T[v];$("#bc").textContent=T[v];$("#sb").classList.remove("open");scrollTo(0,0);
+}
+
+addEventListener("hashchange",route);
+render();chart();
+let S=null,role="user",A=[];
+try{A=JSON.parse(localStorage.getItem("ugc-accounts")||"[]")}catch(e){}
+if(!Array.isArray(A))A=[];
+const hx=async s=>{try{return[...new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,"0")).join("")}catch(e){let h=5381;for(const c of s)h=(h*33^c.charCodeAt(0))>>>0;return"d"+h}};
+function start(s){S=s;try{localStorage.setItem("ugc-session",JSON.stringify(S))}catch(e){}enter()}
+function showReg(x){const m=role==="admin";$("#rf").hidden=!(x&&!m);$("#mf").hidden=!(x&&m);$("#lf").hidden=x;document.querySelector(".tb").hidden=x;$("#er").textContent="";$("#re").textContent="";$("#mrE").textContent=""}
+$("#rg").onclick=()=>showReg(true);$("#rb").onclick=()=>showReg(false);
+$("#gb").onclick=()=>start({role:"guest",id:"tamu",nama:"Tamu"});
+$("#rf").addEventListener("submit",async e=>{
+  e.preventDefault();const n=$("#rn").value.trim(),i=$("#ri").value.trim();
+  if(i.toLowerCase()==="admin"||A.some(a=>a.id.toLowerCase()===i.toLowerCase())){$("#re").textContent="NPM atau ID ini sudah terdaftar. Silakan masuk.";return}
+  A.push({id:i,nama:n,pw:await hx($("#rw").value)});
+  try{localStorage.setItem("ugc-accounts",JSON.stringify(A))}catch(e){}
+  $("#rf").reset();showReg(false);start({role:"user",id:i,nama:n});notify("Akunmu aktif. Mulai dari tab Anorganik untuk menabung sampah.","user");toast("Akun terdaftar. Selamat datang, "+n+".");
+});
+document.addEventListener("click",e=>{if(e.target.closest("[data-reg]")){e.preventDefault();$("#lo").click();showReg(true)}});
+try{S=JSON.parse(localStorage.getItem("ugc-session")||"null")}catch(e){}
+if(S&&!NAV[S.role])S=null;
+const AU=$("#au"),HM=$("#hm");
+const TP=["Halo, aku Si Tong! Pisahkan plastik, kertas, dan logam sebelum dijemput ya.","Bilas botol dan kaleng dulu supaya tidak bau dan nilainya lebih baik.","Ratakan kardus supaya muat lebih banyak dan mudah ditimbang.","Kumpulkan sampah sampai beberapa kilo, lalu ajukan penjemputan sekali jalan.","Poin hijau bisa ditukar voucher, lho. Cek menu Tukar poin!","Belum punya akun? Daftar dulu supaya bisa ajukan penjemputan."];
+let ti=Math.floor(Math.random()*TP.length);
+const ctx=()=>{try{const a=[];if(stot()>=MIN)a.push("Tabungan anorganikmu sudah "+stot().toFixed(1)+" kg. Waktunya minta penjemputan!");if(JR>=JMIN)a.push("Celengan jelantahmu penuh! Setor atau minta penjemputan ya.");return a}catch(e){return[]}};
+let tt=null;
+const tip=()=>{const b=$("#bub"),A=TP.concat(ctx());b.textContent=A[ti++%A.length];b.classList.remove("sw");void b.offsetWidth;b.classList.add("sw")};
+const tick=()=>{clearInterval(tt);tt=setInterval(tip,7000)};
+$("#bub").onclick=()=>{tip();tick()};tip();tick();
+$("#hl").onclick=()=>{HM.hidden=true;AU.hidden=false};
+$("#hr").onclick=()=>{HM.hidden=true;AU.hidden=false;showReg(true)};
+$("#hg").onclick=()=>{HM.hidden=true;start({role:"guest",id:"tamu",nama:"Tamu"})};
+const FAK=[["Fakultas Teknik",412],["Fakultas Ekonomi dan Bisnis",371],["Fakultas Hukum",298],["Fakultas Kedokteran",240],["Fakultas Psikologi",205],["Fakultas Syariah",176]];
+$("#lb").innerHTML=FAK.map(x=>`<div class="lr"><span>${x[0]}</span><i style="width:${x[1]/412*100}%"></i><b>${x[1]}</b></div>`).join("");
+const GD={"Plastik":"Kosongkan dan bilas botol atau gelas, lepas tutup dan label bila bisa, lalu remukkan agar hemat tempat.","Kertas dan kardus":"Jaga tetap kering dan bersih. Lepaskan lakban dan ratakan kardus. Kertas basah atau berminyak dipisah.","Logam dan kaleng":"Bilas kaleng, injak hingga pipih, dan pisahkan tutup aluminium.","Kaca dan botol":"Bilas dan jangan dipecahkan. Bila sudah pecah, bungkus dengan kertas tebal.","Elektronik bekas":"Jangan dibongkar. Lepas baterai dan serahkan utuh ke mitra elektronik.","Minyak jelantah":"Saring sisa makanan, simpan dalam botol tertutup, dan jangan dicampur air."};
+$("#gd").innerHTML=Object.keys(GD).map(k=>`<details><summary>${k}</summary><p class="mu">${GD[k]}</p></details>`).join("");
+const QZ=[{q:"Apa yang sebaiknya dilakukan sebelum menyerahkan botol plastik?",o:["Dibilas dan dikosongkan","Dibakar","Dicampur minyak jelantah"],a:0},{q:"Bagaimana dengan kardus yang basah dan berminyak?",o:["Tetap dicampur dengan kardus kering","Dibakar di halaman","Dipisahkan dari kertas yang bersih"],a:2},{q:"Di mana minyak jelantah sebaiknya disimpan?",o:["Dibuang ke saluran air","Botol tertutup","Dicampur dengan plastik"],a:1}];
+$("#qz").innerHTML=QZ.map((z,i)=>`<fieldset class="qf"><legend>${i+1}. ${z.q}</legend>${z.o.map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`).join("")}</fieldset>`).join("")+`<button class="btn" id="qb" type="button">Periksa jawaban</button><p id="qr" role="status"></p>`;
+$("#qb").onclick=()=>{
+  let ok=0,all=true;
+  QZ.forEach((z,i)=>{const c=document.querySelector(`input[name="q${i}"]:checked`);if(!c)all=false;else if(+c.value===z.a)ok++});
+  if(!all){$("#qr").textContent="Jawab ketiga pertanyaan dulu.";return}
+  let m="Skor "+ok+" dari "+QZ.length+".";
+  if(S&&S.role==="user"){if(ls("ugc-qz"))m+=" Hadiah poin kuis sudah pernah kamu ambil.";else{lsSet("ugc-qz",1);lsSet("ugc-bn",ls("ugc-bn")+ok*5);m+=" Kamu dapat "+ok*5+" poin hijau.";render()}}
+  else m+=" Daftar akun untuk mengumpulkan poin dari kuis.";
+  $("#qr").textContent=m;
+};
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-t]");if(t){tid=t.dataset.t;track();scrollTo(0,0)}
+  const w=e.target.closest("[data-rw]");
+  if(w&&S&&S.role==="user"){const r=RW[w.dataset.rw];if(PT()>=r[1]){lsSet("ugc-sp",ls("ugc-sp")+r[1]);render();toast(r[0]+" berhasil ditukar. Tunjukkan layar ini ke petugas.")}}
+});
+$("#cs").onclick=async()=>{const t=$("#ct");t.select();try{await navigator.clipboard.writeText(t.value);toast("CSV disalin.")}catch(e){try{document.execCommand("copy");toast("CSV disalin.")}catch(x){toast("Salin teks CSV secara manual.")}}};
+try{const t=localStorage.getItem("ugc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;if(localStorage.getItem("ugc-sbc")==="1")document.body.classList.add("sbc")}catch(e){}
+const TH=matchMedia("(prefers-color-scheme:dark)");
+const isDark=()=>{const t=document.documentElement.dataset.theme;return t?t==="dark":TH.matches};
+function paintTh(){const d=isDark();document.querySelectorAll(".th").forEach(b=>{b.textContent=d?"☀️":"🌙";b.title=d?"Ganti ke tema terang":"Ganti ke tema gelap"})}
+document.querySelectorAll(".th").forEach(b=>b.onclick=()=>{const t=isDark()?"light":"dark";document.documentElement.dataset.theme=t;try{localStorage.setItem("ugc-theme",t)}catch(e){}paintTh()});
+TH.addEventListener("change",paintTh);paintTh();
+const KP={"Kampus Tamansari":[205,100],"Kampus Purnawarman":[100,170],"Kampus Ranggamalela":[250,210]};
+const M=[
+{n:"Mitra Plastik dan Kertas",k:"Kampus Tamansari",p:[305,55],a:"Sekitar Tamansari (alamat menyusul)",h:"Senin sampai Sabtu, 08.00–16.00",j:"Plastik, kertas dan kardus"},
+{n:"Mitra Serbaguna Tamansari",k:"Kampus Tamansari",p:[110,62],a:"Sekitar Tamansari (alamat menyusul)",h:"Setiap hari, 07.00–17.00",j:"Plastik, kertas, logam, kaca"},
+{n:"Mitra Logam dan Kaleng",k:"Kampus Purnawarman",p:[45,115],a:"Sekitar Purnawarman (alamat menyusul)",h:"Senin sampai Jumat, 08.00–15.00",j:"Logam dan kaleng"},
+{n:"Mitra Elektronik Bekas",k:"Kampus Purnawarman",p:[60,248],a:"Sekitar Purnawarman (alamat menyusul)",h:"Selasa dan Kamis, 09.00–14.00",j:"Elektronik bekas"},
+{n:"Mitra Kaca dan Botol",k:"Kampus Ranggamalela",p:[345,185],a:"Sekitar Ranggamalela (alamat menyusul)",h:"Senin sampai Sabtu, 08.00–16.00",j:"Kaca dan botol, plastik"},
+{n:"Mitra Minyak Jelantah",k:"Kampus Ranggamalela",p:[190,265],a:"Sekitar Ranggamalela (alamat menyusul)",h:"Rabu dan Sabtu, 09.00–13.00",j:"Minyak jelantah"},{n:"Peternak Maggot BSF",k:"Kampus Tamansari",p:[235,38],a:"Sekitar Tamansari (alamat menyusul)",h:"Menjemput saat ember RT penuh",j:"Sampah organik sisa makanan"}];
+let sel=-1;
+function drawM(){
+  const s=M[sel],c=s&&KP[s.k];
+  $("#mp").innerHTML=`<rect width="400" height="300" rx="10" style="fill:var(--gl)"/><path d="M0 40C80 70 140 20 230 50S350 90 400 70" style="fill:none;stroke:#8cc4ee;stroke-width:10;opacity:.6"/><path d="M0 150H400M0 235H400M75 0V300M205 0V300M325 0V300" style="fill:none;stroke:var(--card);stroke-width:6"/>`
+  +(s?`<line x1="${c[0]}" y1="${c[1]}" x2="${s.p[0]}" y2="${s.p[1]}" style="stroke:var(--g);stroke-width:2.5;stroke-dasharray:6 5"/>`:"")
+  +Object.keys(KP).map(k=>`<rect x="${KP[k][0]-12}" y="${KP[k][1]-12}" width="24" height="24" rx="7" fill="#14602f"/><text x="${KP[k][0]}" y="${KP[k][1]+5}" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">U</text><text x="${KP[k][0]}" y="${KP[k][1]+27}" text-anchor="middle" font-size="10" font-weight="600" style="fill:var(--tx)">${k}</text>`).join("")
+  +M.map((m,i)=>`<g data-i="${i}" tabindex="0" role="button" aria-label="${m.n}"><circle cx="${m.p[0]}" cy="${m.p[1]}" r="${i===sel?13:10}" style="fill:${i===sel?"#e8a317":"var(--g)"};stroke:#fff;stroke-width:3"/><text x="${m.p[0]}" y="${m.p[1]+4}" text-anchor="middle" font-size="11" fill="#fff">♻</text></g>`).join("");
+}
+function selM(i){
+  sel=i;drawM();
+  document.querySelectorAll(".mi").forEach((b,x)=>b.classList.toggle("on",x===i));
+  const m=M[i];
+  $("#md").innerHTML=`<div class="est"><b>${m.n}</b><br>Melayani area ${m.k}<br>Alamat: ${m.a}<br>Jam operasional: ${m.h}<br>Menerima: ${m.j}${S&&S.role!=="admin"?`<br><a class="btn" href="#ajukan" data-m="${i}">Ajukan lewat mitra ini</a>`:""}</div>`;
+}
+$("#ml").innerHTML=M.map((m,i)=>`<li><button class="mi" data-i="${i}"><b>${m.n}</b><span class="mu">Melayani area ${m.k}</span></button></li>`).join("");
+$("#mt").innerHTML=`<option>Otomatis (mitra terdekat)</option>`+M.map(m=>`<option>${m.n}</option>`).join("");
+document.addEventListener("click",e=>{const b=e.target.closest("[data-i]");if(b)selM(+b.dataset.i);const q=e.target.closest("[data-m]");if(q){$("#mt").value=M[q.dataset.m].n.replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"');drawMti();est()}});
+$("#mp").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.dataset.i){e.preventDefault();selM(+e.target.dataset.i)}});
+drawM();
+function enter(){
+  const a=S.role==="admin",g=S.role==="guest";
+  AU.hidden=true;$("#nu").hidden=a||g;$("#na").hidden=!a;$("#ng").hidden=!g;$("#rcc").hidden=g;f.parentElement.hidden=g;$("#gt").hidden=!g;
+  $("#bh").textContent="Selamat datang "+(g?"Tamu":S.nama)+" di EcoTrade";
+  $("#bp").textContent=g?"Kamu sedang melihat-lihat sebagai tamu. Daftar akun untuk mengajukan penjemputan sampah dan mengumpulkan poin hijau.":"Pilah sampahmu, jadwalkan penjemputan, dan tukar jadi saldo serta poin hijau. Bersama menjaga kampus Unisba tetap bersih dan asri.";
+  const b=$("#bb");b.textContent=g?"Daftar sekarang":"Mulai menabung sampah";b.toggleAttribute("data-reg",g);b.href=g?"#dashboard":"#anorganik";
+  $("#un").textContent=g?"Tamu":S.nama;if(a)$("#abh").textContent="Selamat datang "+S.nama+" di EcoTrade";$("#cn").textContent=g?"Tamu":S.nama;
+  $("#ur").textContent=a?"Mitra pengepul EcoTrade":g?"Daftar untuk mulai mengepul":"Warga dan sivitas Unisba";$("#lo").textContent=g?"Masuk atau daftar":"Keluar";
+  $("#av").textContent=a?"MP":g?"TM":S.nama.slice(0,2).toUpperCase();
+  if(S.role==="user"){f.npm.value=S.id;f.nama.value=S.nama}render();buildBar();drawNF();track();drawP();if(S.role==="user"&&!ls("ugc-tur"))setTimeout(()=>tur(0),700);
+  route();
+}
+function setRole(r){
+  role=r;document.querySelectorAll(".tb button").forEach(b=>b.classList.toggle("on",b.dataset.r===r));
+  $("#ul").textContent=r==="admin"?"No. HP atau username mitra":"No. HP atau NPM";
+  $("#uh").textContent=r==="admin"?"Demo mitra: username mitra, kata sandi mitra123. Atau masuk dengan akun mitra yang sudah kamu daftarkan.":"Masuk dengan NPM atau ID yang sudah kamu daftarkan.";
+  $("#er").textContent="";
+}
+$(".tb").addEventListener("click",e=>{const r=e.target.dataset.r;if(r)setRole(r)});
+$("#lf").addEventListener("submit",async e=>{
+  e.preventDefault();const u=$("#lu").value.trim(),p=$("#lp").value;
+  let pm=null;
+  if(role==="admin"){pm=MB.find(x=>x.id.toLowerCase()===u.toLowerCase());if(!(u.toLowerCase()==="mitra"&&p==="mitra123")&&(!pm||pm.pw!==await hx(p))){$("#er").textContent="Akun mitra tidak ditemukan atau kata sandi salah. Coba mitra dan mitra123, atau daftar sebagai mitra.";return}}
+  let a=null;
+  if(role==="user"){a=A.find(x=>x.id.toLowerCase()===u.toLowerCase());if(!a||a.pw!==await hx(p)){$("#er").textContent="NPM atau kata sandi salah. Belum punya akun? Pilih Daftar.";return}}
+  S={role,id:a?a.id:pm?pm.id:"mitra",nama:a?a.nama:pm?pm.nama:"Mitra Pengepul"};
+  try{localStorage.setItem("ugc-session",JSON.stringify(S))}catch(e){}
+  $("#lp").value="";enter();
+});
+$("#lo").onclick=()=>{S=null;try{localStorage.removeItem("ugc-session")}catch(e){}location.hash="";AU.hidden=false;setRole("user");$("#lu").value=""};
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-a]");if(!b)return;
+  const r=R.find(x=>x.id===b.dataset.id),m={jd:["Dijadwalkan","dijadwalkan"],jm:["Dijemput","ditandai dijemput"],sl:["Selesai","ditandai selesai"],tl:["Dibatalkan","ditolak"]}[b.dataset.a];
+  if(r&&m){r.status=m[0];save();render();notify("Permintaanmu "+r.id+" "+m[1]+".","user");toast("Permintaan "+r.id+" "+m[1]+".")}
+});
+$("#sh").onclick=()=>{
+  K.forEach((k,i)=>{const v=parseFloat($("#p"+i).value);if(v>=0)(PM[S.nama]||(PM[S.nama]={}))[k]=v});jsv("ugc-pm",PM);
+  try{localStorage.setItem("ugc-prices",JSON.stringify(P))}catch(e){}
+  drawP();est();drawCmp();notify("Harga baru tersimpan. Warga bisa membandingkannya di tab Anorganik.","admin",S.nama);toast("Harga usahamu disimpan.");
+};
+["Memuat data penjemputan","Menyiapkan dashboard"].forEach((t,i)=>setTimeout(()=>$("#lt").textContent=t+"…",700*(i+1)));
+requestAnimationFrame(()=>requestAnimationFrame(()=>$("#bf").style.width="100%"));
+setTimeout(()=>{$("#ld").classList.add("off");if(S)enter();else{$("#hm").hidden=false;impact()}},2000);
+
+const needU=()=>{if(S&&S.role==="user")return false;toast("Masuk atau daftar dulu untuk menyimpan data.");return true};
+const jg=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}};
+const jsv=(k,v)=>lsSet(k,JSON.stringify(v));
+const td=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+let ST=jg("ugc-stash",{}),JR=ls("ugc-jar"),OG=jg("ugc-org",[]),EM=jg("ugc-ember",{}),NT=jg("ugc-notif",[]);
+const RT=[["RT 03 RW 05",[["Warga A",4.5],["Warga B",6],["Warga C",5.5]]],["RT 01 RW 02",[["Warga D",3],["Warga E",2]]],["RT 05 RW 08",[["Warga F",8],["Warga G",7.5],["Warga H",2]]]],AR=Object.keys(KP),BD=Math.round(HIP*0.9);
+const CB=jg("ugc-cb",{}),cb=r=>CB[r[0]]||(CB[r[0]]=r[1].map(x=>x.slice())),emb=r=>cb(r).reduce((a,x)=>a+x[1],0);
+const stot=()=>Object.keys(ST).filter(k=>P[k]).reduce((a,k)=>a+ST[k],0);
+function clearStash(){ST={};jsv("ugc-stash",ST);drawA();drawS()}
+function clearJL(){JR=0;lsSet("ugc-jar",0);drawJ();drawS()}
+// Anorganik
+$("#at").innerHTML=K.map(k=>`<option>${k}</option>`).join("");
+const calcA=()=>{const k=$("#at").value;$("#av2").textContent=rp((parseFloat($("#aw").value)||0)*P[k]);$("#ah").textContent="("+rp(P[k])+" per kg)";drawCmp()};
+$("#aw").oninput=calcA;$("#at").onchange=calcA;
+$("#ab").onclick=()=>{if(needU())return;const w=parseFloat($("#aw").value),k=$("#at").value;if(!(w>0)){toast("Isi berat dulu.");return}const pv0=stot();ST[k]=(ST[k]||0)+w;jsv("ugc-stash",ST);if(pv0<MIN&&stot()>=MIN)notify("Tabungan anorganikmu sudah "+stot().toFixed(1)+" kg. Kamu bisa minta penjemputan sekarang.","user");$("#aw").value="";calcA();drawA();drawS();toast(w+" kg "+k+" masuk tabungan.")};
+$("#ac").onclick=()=>{if(!needU())clearStash()};
+function drawA(){
+  const ks=Object.keys(ST).filter(k=>P[k]&&ST[k]>0),tot=stot(),val=ks.reduce((a,k)=>a+ST[k]*P[k],0);
+  $("#ap2").style.width=Math.min(100,tot/MIN*100)+"%";
+  $("#am").innerHTML=`<b>${tot.toFixed(1)} kg</b> dari minimal ${MIN} kg untuk penjemputan. Estimasi nilai <b>${rp(val)}</b>.`;
+  $("#al").innerHTML=ks.map(k=>`<li>${k}: ${ST[k].toFixed(1)} kg <span class="mu">${rp(ST[k]*P[k])}</span></li>`).join("")||`<li class="mu">Belum ada sampah ditabung.</li>`;
+  $("#aa").innerHTML=tot>=MIN?`<a class="btn" href="#ajukan" data-pk>Minta penjemputan</a><p class="mu">Alamat dan lokasi diteruskan ke mitra terdekat. ${ogf(tot,0)?"Ongkir "+rp(ogf(tot,0))+" dipotong dari nilai sampah, jadi kamu menerima sekitar "+rp(Math.max(0,val-ogf(tot,0)))+". Capai "+FREE+" kg untuk gratis ongkir.":"Gratis ongkir karena sudah mencapai "+FREE+" kg."}</p>`:`<button class="btn" type="button" disabled>Minta penjemputan</button><p class="mu">Kurang ${(MIN-tot).toFixed(1)} kg lagi. Teruslah menabung secara virtual, atau antar sendiri (drop-off) ke pengepul terdekat di bawah.</p>`;
+}
+$("#ar").innerHTML=AR.map(a=>`<option>Dekat ${a}</option>`).join("");
+function drawN(){
+  const a=AR[$("#ar").selectedIndex],c=KP[a];
+  $("#an").innerHTML=M.map((m,i)=>[i,m,Math.hypot(c[0]-m.p[0],c[1]-m.p[1])]).filter(x=>anM(x[1].j)).sort((x,y)=>x[2]-y[2]).slice(0,3).map(x=>`<li><b>${x[1].n}</b><span class="mu">Sekitar ${(x[2]/60).toFixed(1)} km dari ${a} (perkiraan). Menerima: ${x[1].j}. ${x[1].h}.</span> <a href="#peta" data-i="${x[0]}">Lihat di peta</a></li>`).join("");
+}
+$("#ar").onchange=()=>{drawN();drawCmp()};
+document.addEventListener("click",e=>{
+  if(e.target.closest("[data-pk]"))setTimeout(()=>{K.forEach((k,i)=>{$("#k"+i).value=ST[k]||""});est()},0);
+  if(e.target.closest("[data-pj]"))setTimeout(()=>{$("#kj").value=JR||"";est()},0);
+});
+// Organik
+try{$("#or").value=localStorage.getItem("ugc-rt")||""}catch(e){}
+const rtn=()=>{const v=$("#or").value.trim().replace(/\s+/g," ");return v?[v.toLowerCase(),[],v]:null};
+function calcO(){const v=parseFloat($("#ok").value)||0;$("#oe").innerHTML=`Potensi pakan maggot: <b>${(v*MG).toFixed(2)} kg</b> (sekitar ${rp(v*MG*MP)}) dan <b>${Math.round(v*10)} poin</b> peduli lingkungan.`}
+$("#ok").oninput=calcO;$("#or").oninput=()=>drawO();
+function drawO(){
+  const r=rtn(),lv=r?emb(r):0;
+  $("#op").style.width=Math.min(100,lv/EMB*100)+"%";
+  const c=r?cb(r):[];$("#om").innerHTML=!r?"Ketik nama RT kamu di kolom Ember komunal RT untuk melihat status ember.":`<b>${esc(r[2])}</b>: Σ input warga = ${c.length>5?"… + ":""}${c.length?c.slice(-5).map(x=>x[0]+" "+x[1]).join(" + "):"belum ada setoran"} = <b>${lv.toFixed(1)} kg</b> dari kuota ${EMB} kg. ${lv>=EMB?"<b>Kuota penuh.</b> Notifikasi penjemputan sudah dikirim ke peternak maggot.":"Masih muat "+(EMB-lv).toFixed(1)+" kg."}`;
+  $("#on").innerHTML=NT.slice(0,4).map(n=>`<li>${esc(n)}</li>`).join("")||`<li class="mu">Belum ada notifikasi.</li>`;
+  drawK();drawKT();bars("#oc",[...Array(7)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()-6+i);d.setMinutes(d.getMinutes()-d.getTimezoneOffset());const k=d.toISOString().slice(0,10);return[k.slice(8),+OG.filter(x=>x.t===k).reduce((a,x)=>a+x.k,0).toFixed(1)]}));
+  const tot=OG.reduce((a,x)=>a+x.k,0);
+  $("#ot").textContent="Total tercatat "+tot.toFixed(1)+" kg, potensi "+(tot*MG).toFixed(2)+" kg maggot. Asumsi: 0,2 kg maggot per kg sisa makanan dan harga maggot segar Rp7.000 per kg. Satu peternak melaporkan hingga 0,5 kg per kg limbah, jadi angka ini konservatif.";
+}
+$("#ob").onclick=()=>{
+  if(needU())return;const v=parseFloat($("#ok").value),r=rtn();if(!r){toast("Isi dulu nama RT kamu.");return}lsSet("ugc-rt",r[2]);RN[r[0]]=r[2];jsv("ugc-rtn",RN);
+  if(!(v>0)){toast("Isi volume sisa makanan dulu.");return}
+  OG.push({t:td(),k:v});jsv("ugc-org",OG);
+  const pv=emb(r);cb(r).push([S.nama,v]);jsv("ugc-cb",CB);const lv=emb(r),full=lv>=EMB&&pv<EMB;
+  lsSet("ugc-bn",ls("ugc-bn")+Math.round(v*10));
+  if(full){NT.unshift(td()+": kuota ember "+r[2]+" tercapai ("+lv.toFixed(1)+" kg dari "+EMB+" kg). Notifikasi penjemputan otomatis dikirim ke Peternak Maggot BSF.");jsv("ugc-notif",NT);notify("Kuota ember "+r[2]+" tercapai. Peternak maggot diberi tahu otomatis.","user");notify("Ember "+r[2]+" penuh ("+lv.toFixed(1)+" kg). Jadwalkan penjemputan sampah organik.","admin")}
+  $("#ok").value="";calcO();drawO();render();
+  toast(full?"Kuota penuh! Peternak maggot diberi tahu otomatis.":"Tercatat. Kamu dapat "+Math.round(v*10)+" poin.");
+};
+$("#os").onclick=()=>{const r=rtn();if(!r){toast("Isi dulu nama RT kamu.");return}CB[r[0]]=[];jsv("ugc-cb",CB);drawO();toast("Ember "+r[2]+" dikosongkan peternak (simulasi).")};
+// Jelantah
+function drawJ(){
+  $("#jf").style.height=Math.min(100,JR/JMIN*100)+"%";
+  $("#jm").innerHTML=`<b>${JR.toFixed(1)} liter</b> dari target ${JMIN} liter`;
+  $("#jv").textContent=JR>=JMIN?"Celengan penuh!":"Kurang "+(JMIN-JR).toFixed(1)+" liter lagi.";
+  $("#ja").innerHTML=JR>=JMIN?`<p><b>Waktunya setor!</b> Antar jeriken ke Bank Sampah atau minta penjemputan (${ogf(0,JR)?"ongkir "+rp(ogf(0,JR))+" dipotong dari nilai jelantah":"gratis ongkir"}).</p><a class="btn" href="#ajukan" data-pj>Minta penjemputan jelantah</a>`:"";
+  $("#jn").innerHTML=`<li><b>Harga beli pengepul (simulasi)</b><span class="mu">${rp(JL)} per liter, jadi celenganmu bernilai ${rp(JR*JL)}.</span></li><li><b>Nilai jika diolah jadi biodiesel</b><span class="mu">Sekitar ${rp(BD)} per liter, potensi ${rp(JR*BD)} di hilir. Ini bukan yang diterima penyetor.</span></li>`;
+}
+$("#jb").onclick=()=>{if(needU())return;const v=parseFloat($("#jl").value);if(!(v>0)){toast("Isi volume jelantah dulu.");return}const pj0=JR;JR=+(JR+v).toFixed(2);lsSet("ugc-jar",JR);if(pj0<JMIN&&JR>=JMIN)notify("Celengan jelantahmu penuh ("+JR+" liter). Saatnya setor atau minta penjemputan.","user");$("#jl").value="";drawJ();drawS();toast(JR>=JMIN?"Celengan penuh! Saatnya setor atau minta penjemputan.":v+" liter masuk celengan.")};
+// Ringkasan dashboard
+function drawS(){
+  const u=S&&S.role==="user",t=stot(),o=OG.reduce((a,x)=>a+x.k,0);
+  drawW();drawMW();drawBG();drawPA();drawNM();drawFD();drawMC();drawTD();drawTW();drawRK();drawSD();document.querySelectorAll("#qm [data-u]").forEach(x=>{x.hidden=!u});$("#sm").hidden=!u;
+  $("#sm").innerHTML=`<h3>Tabungan dan catatanmu</h3><ul class="ls"><li><b>Anorganik</b><span class="mu">${t.toFixed(1)} dari ${MIN} kg ${t>=MIN?"(siap dijemput)":""}</span></li><li><b>Jelantah</b><span class="mu">${JR.toFixed(1)} dari ${JMIN} liter ${JR>=JMIN?"(siap disetor)":""}</span></li><li><b>Organik</b><span class="mu">${o.toFixed(1)} kg tercatat, potensi ${(o*MG).toFixed(2)} kg maggot</span></li></ul>`;
+}
+const lbl=()=>{["#rc","#hs","#aq","#ak"].forEach(s=>{const tb=$(s);if(!tb)return;const t=tb.closest("table"),hs=[...t.querySelectorAll("th")].map(x=>x.textContent.trim());t.classList.add("rt");[...tb.rows].forEach(r=>[...r.cells].forEach((c,i)=>{c.dataset.l=hs[i]||""}))})};
+const _rd=render;render=function(){_rd();drawS();lbl()};
+const near=(a,jo)=>{const c=KP[a]||KP["Kampus Tamansari"];return M.filter(m=>(jo?/jelantah/i.test(m.j):anM(m.j))&&!CL[m.n]).sort((x,y)=>Math.hypot(c[0]-x.p[0],c[1]-x.p[1])-Math.hypot(c[0]-y.p[0],c[1]-y.p[1]))[0].n};
+let NF=jg("ugc-nf",[]);
+if(!NF.length){NF=[{t:Date.now(),m:"Selamat datang di EcoTrade! Mulai dari tab Anorganik untuk menabung sampahmu.",f:"user",r:false},{t:Date.now(),m:"Selamat datang, mitra! Permintaan penjemputan dari warga akan muncul di sini.",f:"admin",r:false}];jsv("ugc-nf",NF)}
+const vis=n=>!!S&&((S.role==="admin"&&n.f==="admin"&&(!n.to||S.id==="mitra"||norm(n.to)===norm(S.nama)))||(S.role==="user"&&n.f==="user"));
+const tm=t=>new Date(t).toLocaleString("id-ID",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
+function notify(m,f,to){NF.unshift({t:Date.now(),m,f,to,r:false});NF.length=Math.min(NF.length,40);jsv("ugc-nf",NF);drawNF()}
+function drawNF(){const u=NF.filter(n=>vis(n)&&!n.r).length,b=$("#bn");b.textContent=u>9?"9+":u;b.hidden=!u}
+function openNF(){
+  const L=NF.filter(vis);
+  $("#npb").innerHTML=`<div class="nph"><b>Notifikasi</b><button class="lk ok" id="nx" type="button">Tutup</button></div>`+(L.length?`<ul class="ls">${L.slice(0,12).map(n=>`<li class="${n.r?"":"nu"}"><b>${esc(n.m)}</b><span class="mu">${tm(n.t)}</span></li>`).join("")}</ul>`:`<p class="mu">${S&&S.role==="guest"?"Masuk atau daftar untuk menerima notifikasi.":"Belum ada notifikasi."}</p>`);
+  $("#nx").onclick=()=>{$("#np").hidden=true};
+  $("#np").hidden=false;NF.forEach(n=>{if(vis(n))n.r=true});jsv("ugc-nf",NF);drawNF();
+}
+$("#bl").onclick=()=>{$("#np").hidden?openNF():$("#np").hidden=true};
+document.addEventListener("click",e=>{if(!$("#np").hidden&&!e.target.closest("#np,#bl"))$("#np").hidden=true});
+function drawK(){
+  const s=new Set(OG.map(x=>x.t));let n=0;const d=new Date();
+  for(;;){const t=new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);if(s.has(t)){n++;d.setDate(d.getDate()-1)}else if(n===0&&t===td()){d.setDate(d.getDate()-1)}else break}
+  $("#osk").innerHTML=n?`🔥 <b>${n} hari beruntun</b> mencatat sisa makanan. Pertahankan!`:"Catat hari ini untuk memulai rangkaian hari beruntun.";
+}
+$("#osw").onclick=()=>{
+  const r=rtn();if(!r){toast("Isi dulu nama RT kamu.");return}
+  RN[r[0]]=r[2];jsv("ugc-rtn",RN);const v=+(1+Math.random()*3).toFixed(1),pv=emb(r),w="Warga "+"ABCDEFGH"[Math.floor(Math.random()*8)];
+  cb(r).push([w,v]);jsv("ugc-cb",CB);const lv=emb(r);
+  if(pv<EMB&&lv>=EMB){NT.unshift(td()+": kuota ember "+r[2]+" tercapai ("+lv.toFixed(1)+" kg dari "+EMB+" kg). Notifikasi penjemputan otomatis dikirim ke Peternak Maggot BSF.");jsv("ugc-notif",NT);notify("Kuota ember "+r[2]+" tercapai. Peternak maggot diberi tahu otomatis.","user");notify("Ember "+r[2]+" penuh ("+lv.toFixed(1)+" kg). Jadwalkan penjemputan sampah organik.","admin")}
+  drawO();toast(w+" menyetor "+v+" kg ke ember.");
+};
+function norm(s){return String(s||"").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').trim().toLowerCase()}
+function mine(r){return norm(r.mitra)===norm(S.nama)}
+function RA(){try{return S&&S.role==="admin"&&S.id!=="mitra"?R.filter(mine):R}catch(e){return R}}
+let WH=ls("ugc-wh")===1;
+function drawW(){
+  const u=!!S&&S.role==="user";$("#wl").hidden=!u;if(!u)return;
+  const sd=saldo();
+  $("#wb").textContent=WH?"Rp ••••••":rp(sd);$("#we").textContent=WH?"🙈":"👁️";
+  $("#wp").textContent=WH?"•••":PT();$("#ws").textContent=stot().toFixed(1)+" kg";$("#wj").textContent=JR.toFixed(1)+" L";
+  const pp=PT(),nx=RW.map(r=>r[1]).filter(c=>c>pp).sort((a,b)=>a-b)[0];
+  $("#wn").innerHTML=WH?"Poin disembunyikan.":nx?`<b>${nx-pp} poin lagi</b> untuk hadiah berikutnya: ${RW.find(r=>r[1]===nx)[0]}<div class="pg"><i style="width:${Math.min(100,pp/nx*100)}%"></i></div>`:"<b>Semua hadiah sudah bisa ditukar!</b> Buka menu Tukar poin.";
+}
+$("#we").onclick=()=>{WH=!WH;lsSet("ugc-wh",WH?1:0);drawW()};
+let MH=ls("ugc-mh")===1;
+const RN=jg("ugc-rtn",{}),CL=jg("ugc-closed",{});
+function strk(){const s=new Set(OG.map(x=>x.t));let n=0;const d=new Date();for(;;){const t=new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);if(s.has(t)){n++;d.setDate(d.getDate()-1)}else if(n===0&&t===td()){d.setDate(d.getDate()-1)}else break}return n}
+function rateUI(r){
+  if(r.status!=="Selesai")return"";
+  const m=esc(r.mitra||"mitra");
+  return r.rt?`<p style="margin:14px 0 0">Penilaianmu untuk <b>${m}</b>: <b>${"★".repeat(r.rt)}${"☆".repeat(5-r.rt)}</b></p>`:`<p style="margin:14px 0 6px"><b>Beri nilai untuk ${m}</b> dan dapat 5 poin hijau</p><div class="stars">${[1,2,3,4,5].map(n=>`<button type="button" data-star="${n}" data-sid="${r.id}" aria-label="${n} bintang">☆</button>`).join("")}</div>`;
+}
+function drawBG(){
+  const u=!!S&&S.role==="user";$("#bg").hidden=!u;if(!u)return;
+  const d=R.filter(r=>r.status==="Selesai"),kg=d.reduce((a,r)=>a+r.kg,0),og=OG.reduce((a,x)=>a+x.k,0);
+  const B=[["🌱","Pemula hijau","1 penjemputan selesai",d.length>=1],["🧴","Penabung 10 kg","10 kg sampah anorganik",kg>=10],["🍃","Jagoan organik","5 kg sisa makanan tercatat",og>=5],["🛢️","Pahlawan jelantah","Celengan 5 liter penuh",JR>=JMIN||d.some(r=>r.l>=JMIN)],["🔥","Konsisten","3 hari beruntun mencatat",strk()>=3]];
+  $("#bg").innerHTML=`<h3>Lencana (${B.filter(b=>b[3]).length} dari ${B.length})</h3><div class="bgs">${B.map(b=>`<div class="bgi${b[3]?"":" lk0"}"><i>${b[0]}</i><span>${b[1]}</span><small>${b[3]?"Terbuka":b[2]}</small></div>`).join("")}</div>`;
+}
+function drawMW(){
+  if(!(S&&S.role==="admin"))return;
+  const Q=RA(),nv=Q.filter(r=>r.status==="Selesai").reduce((a,r)=>a+r.nilai,0),rs=Q.filter(r=>r.rt),av=rs.length?rs.reduce((a,r)=>a+r.rt,0)/rs.length:0,cl=!!CL[S.nama],me=MB.find(x=>x.id===S.id);
+  $("#mb3").textContent=MH?"Rp ••••••":rp(nv);$("#me").textContent=MH?"🙈":"👁️";
+  $("#mq").textContent=Q.filter(r=>r.status==="Menunggu").length;
+  $("#md2").textContent=Q.filter(r=>r.status==="Dijadwalkan"||r.status==="Dijemput").length;
+  $("#mg2").textContent=rs.length?av.toFixed(1)+" ★":"-";
+  $("#mo").innerHTML=`<i>${cl?"🔴":"🟢"}</i>${cl?"Ditutup, ketuk untuk membuka":"Menerima penjemputan, ketuk untuk menutup"}`;
+  const jd=Q.filter(r=>r.status==="Dijadwalkan"||r.status==="Dijemput").sort((a,b)=>a.tgl.localeCompare(b.tgl));
+  $("#jd").innerHTML=jd.length?`<ul class="ls">${jd.map(r=>`<li><b>${fd(r.tgl)}, ${r.jam}</b><span class="mu">${esc(r.nama||"Warga")} di ${esc(r.area)}${r.alamat?" ("+esc(r.alamat)+")":""}. ${r.kg} kg${r.l?" + "+r.l+" L jelantah":""}.</span>${act(r)}<button class="lk ok" data-chat="${r.id}">Chat</button></li>`).join("")}</ul>`:`<p class="mu">Belum ada penjemputan terjadwal. Jadwalkan dari daftar permintaan masuk.</p>`;
+  const okO=S.id==="mitra"||/organik/i.test(me?me.m.j:""),EL=Object.keys(CB).map(k=>[k,CB[k].reduce((a,x)=>a+x[1],0)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  $("#em").innerHTML=!okO?`<p class="mu">Usahamu belum menerima sampah organik, jadi ember RT tidak ditampilkan.</p>`:EL.length?`<ul class="ls">${EL.slice(0,5).map(x=>`<li><b>${esc(RN[x[0]]||x[0])}</b><span class="mu">${x[1].toFixed(1)} dari ${EMB} kg${x[1]>=EMB?" (penuh)":""}</span>${x[1]>=EMB?`<button class="lk ok" data-ej="${esc(x[0])}">Jemput sekarang</button>`:""}</li>`).join("")}</ul>`:`<p class="mu">Belum ada ember RT yang terisi.</p>`;
+  $("#rv").innerHTML=`<h3>Ulasan warga</h3>`+(rs.length?`<p style="margin:0 0 6px"><b style="font-size:22px">${av.toFixed(1)} ★</b> <span class="mu">dari ${rs.length} ulasan</span></p><ul class="ls">${rs.slice(0,4).map(r=>`<li><b>${"★".repeat(r.rt)}${"☆".repeat(5-r.rt)}</b><span class="mu">${esc(r.nama||"Warga")}, ${r.id}</span></li>`).join("")}</ul>`:`<p class="mu">Belum ada ulasan. Warga bisa menilai setelah penjemputan selesai.</p>`);
+  $("#pf").innerHTML=`<h3>Profil usaha</h3><ul class="ls"><li><b>Nama usaha</b><span class="mu">${esc(S.nama)}</span></li>`+(me?`<li><b>Area layanan</b><span class="mu">${me.m.k}</span></li><li><b>Alamat dan jam</b><span class="mu">${me.m.a}. ${me.m.h}</span></li><li><b>Menerima</b><span class="mu">${me.m.j}</span></li>`:`<li class="mu">Akun demo. Daftar sebagai mitra untuk mengisi profil usaha sungguhan.</li>`)+`<li><b>Status penerimaan</b><span class="mu">${cl?"Ditutup sementara":"Menerima penjemputan"}. Ubah lewat tombol Buka atau Tutup di dashboard.</span></li></ul>`;
+}
+$("#me").onclick=()=>{MH=!MH;lsSet("ugc-mh",MH?1:0);drawMW()};
+$("#mo").onclick=()=>{CL[S.nama]=!CL[S.nama];jsv("ugc-closed",CL);drawMW();fillMt();toast(CL[S.nama]?"Penerimaan penjemputan ditutup sementara.":"Penerimaan penjemputan dibuka kembali.")};
+document.addEventListener("click",e=>{
+  const s=e.target.closest("[data-star]");
+  if(s){const r=R.find(x=>x.id===s.dataset.sid);if(r&&!r.rt){r.rt=+s.dataset.star;save();lsSet("ugc-bn",ls("ugc-bn")+5);notify("Warga memberi "+r.rt+" bintang untuk penjemputan "+r.id+".","admin",r.mitra);render();toast("Terima kasih! Kamu dapat 5 poin hijau.")}return}
+  const j=e.target.closest("[data-ej]");
+  if(j){const k=j.dataset.ej;RL.unshift({t:Date.now(),k,n:RN[k]||k,kg:(CB[k]||[]).reduce((a,x)=>a+x[1],0),by:S.nama});jsv("ugc-rtlog",RL);CB[k]=[];jsv("ugc-cb",CB);notify("Ember "+(RN[k]||k)+" sudah dijemput peternak maggot. Terima kasih sudah menyetor!","user");drawMW();drawO();toast("Ember "+(RN[k]||k)+" dijemput dan dikosongkan.")}
+});
+function drawPA(){
+  const u=!!S&&S.role==="user";$("#pa").hidden=!u;if(!u)return;
+  const r=R.find(x=>x.status==="Menunggu"||x.status==="Dijadwalkan"||x.status==="Dijemput");
+  if(!r){$("#pa").innerHTML=`<h3>Penjemputan aktif</h3><p class="mu">Belum ada penjemputan aktif. Tabung sampahmu sampai ${MIN} kg, lalu minta penjemputan.</p><a class="btn" href="#anorganik">Mulai menabung</a>`;return}
+  const st=["Diajukan","Dijadwalkan","Dijemput","Selesai"],i={Menunggu:0,Dijadwalkan:1,Dijemput:2}[r.status];
+  $("#pa").innerHTML=`<h3>Penjemputan aktif</h3><p style="margin:0 0 4px"><b>${r.id}</b> bersama <b>${esc(r.mitra||"mitra terdekat")}</b></p><p class="mu" style="margin:0 0 12px">${fd(r.tgl)}, ${r.jam}. ${esc(r.area)}</p><div class="tr">${st.map((s,n)=>`<div class="${n<=i?"on":""}"><i>${n<i?"✓":n+1}</i><span>${s}</span></div>`).join("")}</div><p style="margin:14px 0 0"><a class="lnk" href="#riwayat" data-t="${r.id}">Lacak selengkapnya</a> <button class="lk ok" data-chat="${r.id}">Chat mitra</button></p>`;
+}
+function drawNM(){
+  const u=!!S&&(S.role==="user"||S.role==="guest");$("#nm").hidden=!u;if(!u)return;
+  const a=R[0]&&KP[R[0].area]?R[0].area:"Kampus Tamansari",c=KP[a];
+  const L=M.map((m,i)=>[i,m,Math.hypot(c[0]-m.p[0],c[1]-m.p[1])]).sort((x,y)=>x[2]-y[2]).slice(0,4);
+  $("#nm").innerHTML=`<h3>Mitra terdekat dari ${a.replace("Kampus ","")}</h3><ul class="ls">${L.map(x=>{const m=x[1],rs=R.filter(r=>norm(r.mitra)===norm(m.n)&&r.rt),av=rs.length?(rs.reduce((s,r)=>s+r.rt,0)/rs.length).toFixed(1)+" ★ ("+rs.length+" ulasan)":"belum ada ulasan",cl=!!CL[m.n];return `<li><b>${m.n}</b> <span class="b ${cl?"x":"s"}">${cl?"Tutup":"Buka"}</span><span class="mu">Sekitar ${(x[2]/60).toFixed(1)} km. Menerima ${m.j}. ${av}.</span><a class="lnk" href="#peta" data-i="${x[0]}">Lihat di peta</a></li>`}).join("")}</ul>`;
+}
+function drawFD(){
+  const L=NF.filter(vis).slice(0,5),h=`<h3>Aktivitas terbaru</h3>`+(L.length?`<ul class="ls">${L.map(n=>`<li><b>${esc(n.m)}</b><span class="mu">${tm(n.t)}</span></li>`).join("")}</ul>`:`<p class="mu">Belum ada aktivitas.</p>`);
+  $("#fd").hidden=!(S&&S.role==="user");$("#fm").hidden=!(S&&S.role==="admin");
+  if(S&&S.role==="user")$("#fd").innerHTML=h;if(S&&S.role==="admin")$("#fm").innerHTML=h;
+}
+function drawMC(){
+  if(!(S&&S.role==="admin"))return;
+  const Q=RA().filter(r=>r.status==="Menunggu"||r.status==="Dijadwalkan"||r.status==="Dijemput");
+  const D=[...Array(7)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()+i);d.setMinutes(d.getMinutes()-d.getTimezoneOffset());const k=d.toISOString().slice(0,10);return[k.slice(8),+Q.filter(r=>r.tgl===k).reduce((a,r)=>a+r.kg+(r.l||0),0).toFixed(1)]});
+  $("#mc").innerHTML=`<h3>Muatan 7 hari ke depan (kg atau liter)</h3><svg id="mcs" viewBox="0 0 360 170" width="100%" role="img" aria-label="Grafik muatan 7 hari ke depan"></svg>`;
+  bars("#mcs",D);
+}
+document.addEventListener("click",e=>{
+  if(e.target.closest("[data-nf]")){$("#bl").click();return}
+  if(e.target.closest("[data-bg]")){e.preventDefault();const b=$("#bg");if(b&&!b.hidden)b.scrollIntoView({behavior:"smooth",block:"center"})}
+});
+const CH=jg("ugc-chat",{}),QR={user:["Kapan dijemput?","Titik jemput di depan gerbang ya","Terima kasih!"],admin:["Saya otw ke lokasi","Mohon sampah dipilah dulu","Berat sudah saya timbang"]};
+let cid=null;
+function chatUI(r){try{return chatUI2(r)}catch(e){return""}}
+function chatUI2(r){
+  if(!r.mitra||r.status==="Dibatalkan"||!S||S.role==="guest")return"";
+  return `<p style="margin:14px 0 0"><button class="btn" type="button" data-chat="${r.id}">Chat dengan ${esc(r.mitra)}</button></p>`+(r.wa&&r.status==="Dijemput"&&S.role==="user"?`<div class="est" style="margin-top:14px"><b>Konfirmasi timbangan</b><br>Mitra menimbang <b>${r.wa} kg</b> (perkiraanmu ${r.kg} kg). Nilai baru <b>${rp(r.wn)}</b>.<p style="margin:10px 0 0"><button class="btn" data-ok="${r.id}" type="button">Setujui</button> <button class="gh" style="width:auto;padding:8px 14px" data-chat="${r.id}" type="button">Tanyakan lewat chat</button></p></div>`:"");
+}
+function openChat(id){
+  const r=R.find(x=>x.id===id);if(!r||!S||S.role==="guest")return;cid=id;
+  const L=CH[id]||[],who=S.role==="user"?(r.mitra||"mitra"):(r.nama||"warga");
+  $("#cmb").innerHTML=`<div class="nph"><b>Chat dengan ${esc(who)}</b><button class="lk ok" id="cx" type="button">Tutup</button></div><p class="mu" style="margin:0">Permintaan ${r.id}, ${r.kg} kg${r.l?" + "+r.l+" L":""}</p><div class="cl" id="cl">${L.length?L.map(m=>`<div class="cb${m.f===S.role?" me":""}"><small>${esc(m.n)}, ${tm(m.t)}</small>${esc(m.m)}</div>`).join(""):`<p class="mu">Belum ada pesan. Mulai percakapan.</p>`}</div><div class="chips">${QR[S.role].map(q=>`<button class="lk" data-q="${esc(q)}" type="button">${esc(q)}</button>`).join("")}</div><div class="cf"><input id="ci" placeholder="Tulis pesan" autocomplete="off"><button class="btn" id="cs2" type="button">Kirim</button></div>`;
+  $("#cm").hidden=false;$("#cx").onclick=()=>{$("#cm").hidden=true};$("#cs2").onclick=()=>sendChat($("#ci").value);
+  $("#ci").onkeydown=e=>{if(e.key==="Enter")sendChat($("#ci").value)};
+  const l=$("#cl");l.scrollTop=l.scrollHeight;$("#ci").focus();
+}
+function sendChat(t){
+  t=(t||"").trim();if(!t||!cid)return;const r=R.find(x=>x.id===cid);
+  (CH[cid]||(CH[cid]=[])).push({f:S.role,n:S.nama,m:t,t:Date.now()});jsv("ugc-chat",CH);
+  notify("Pesan baru dari "+S.nama+" ("+cid+"): "+t.slice(0,60),S.role==="user"?"admin":"user",S.role==="user"?r.mitra:undefined);openChat(cid);
+}
+document.addEventListener("click",e=>{
+  const c=e.target.closest("[data-chat]");if(c){openChat(c.dataset.chat);return}
+  const q=e.target.closest("[data-q]");if(q){sendChat(q.dataset.q);return}
+  if(e.target===$("#cm")){$("#cm").hidden=true;return}
+  const ok=e.target.closest("[data-ok]");
+  if(ok){const r=R.find(x=>x.id===ok.dataset.ok);if(r&&r.wa){r.kg=r.wa;r.nilai=r.wn;r.status="Selesai";delete r.wa;delete r.wn;save();notify("Warga menyetujui timbangan "+r.id+" ("+r.kg+" kg). Permintaan selesai.","admin",r.mitra);notify("Permintaan "+r.id+" selesai. Nilai "+rp(r.nilai)+" masuk ke saldomu.","user");render();toast("Timbangan disetujui. Permintaan selesai.")}}
+});
+document.addEventListener("click",e=>{
+  const b=e.target.closest('[data-a="sl"]');if(!b)return;
+  const r=R.find(x=>x.id===b.dataset.id);if(!r)return;e.stopPropagation();
+  if(!r.kg){r.status="Selesai";save();render();notify("Permintaan "+r.id+" selesai.","user");toast("Permintaan "+r.id+" selesai.");return}
+  $("#cmb").innerHTML=`<div class="nph"><b>Timbangan aktual ${r.id}</b><button class="lk ok" id="cx" type="button">Tutup</button></div><p class="mu">Perkiraan warga ${r.kg} kg. Masukkan berat hasil timbang, lalu warga akan menyetujui nilainya.</p><label style="display:flex;flex-direction:column;gap:5px;font-weight:600;font-size:13px">Berat aktual (kg)<input id="wv" type="number" min="0" step="0.1" value="${r.wa||r.kg}"></label><p style="margin:14px 0 0"><button class="btn" id="wk" type="button">Kirim ke warga</button></p>`;
+  $("#cm").hidden=false;$("#cx").onclick=()=>{$("#cm").hidden=true};
+  $("#wk").onclick=()=>{const v=parseFloat($("#wv").value);if(!(v>0)){toast("Isi berat dulu.");return}r.wa=+v.toFixed(1);r.wn=Math.max(0,Math.round((r.nilai+(r.ong||0))*(r.wa/r.kg))-(r.ong||0));save();$("#cm").hidden=true;notify("Mitra menimbang "+r.wa+" kg untuk "+r.id+" (perkiraanmu "+r.kg+" kg). Nilai baru "+rp(r.wn)+". Mohon konfirmasi di Riwayat.","user");render();toast("Timbangan dikirim. Menunggu persetujuan warga.")};
+},true);
+function drawTD(){
+  const d=R.filter(r=>r.status==="Selesai"),kg=d.reduce((a,r)=>a+r.kg,0);
+  $("#tdv").innerHTML=[["🗑️",kg.toFixed(1)+" kg","Sampah terkumpul"],["🌍",eco(kg)[0].toFixed(0)+" kg","CO₂ dihemat"],["✅",d.length,"Penjemputan selesai"],["🏪",M.length,"Mitra di peta"]].map(s=>`<div class="bgi"><i>${s[0]}</i><span>${s[1]}</span><small>${s[2]}</small></div>`).join("");
+}
+const TUR=[["🧴","Tabung sampah anorganik","Pilih jenis dan berat di tab Anorganik. Nilainya langsung dihitung."],["🍃","Catat sisa makanan","Buang ke ember RT, lalu catat di tab Organik untuk mendapat poin."],["🛢️","Isi celengan jelantah","Kumpulkan sedikit demi sedikit sampai 5 liter di tab Jelantah."],["🚛","Minta penjemputan","Setelah 5 kg atau 5 liter, mitra terdekat menjemput dan kalian bisa saling chat."]];
+function tur(n){
+  const s=TUR[n];if(!s){lsSet("ugc-tur",1);$("#cm").hidden=true;return}
+  $("#cmb").innerHTML=`<div style="display:flex;gap:12px;align-items:center"><svg viewBox="0 0 90 110" aria-hidden="true" style="width:56px;height:68px;flex:none"><use href="#c-bin"/></svg><div><p class="mu" style="margin:0">Tur ${n+1} dari ${TUR.length}</p><h3 style="margin:2px 0 4px">${s[0]} ${s[1]}</h3><p style="margin:0">${s[2]}</p></div></div><div class="mrow"><button class="gh" id="tsk" type="button">Lewati</button><button class="btn" id="tnx" type="button" style="flex:1">${n+1<TUR.length?"Lanjut":"Selesai"}</button></div>`;
+  $("#cm").hidden=false;$("#tsk").onclick=()=>tur(99);$("#tnx").onclick=()=>tur(n+1);
+}
+$("#tr0").onclick=()=>tur(0);
+async function demo(role){
+  const pw=await hx("demo123"),d=o=>{const x=new Date();x.setDate(x.getDate()+o);x.setMinutes(x.getMinutes()-x.getTimezoneOffset());return x.toISOString().slice(0,10)},MN="Mitra Hijau Bandung";
+  const mk=(id,off,st,kg,ex)=>Object.assign({id,nama:"Siti Rahma",tgl:d(off),jam:"09.00–11.00",area:"Kampus Tamansari",alamat:"Jl. Tamansari No. 10",mitra:MN,kg,l:0,nilai:Math.round(kg*2200)-(kg<10?5000:0),ong:kg<10?5000:0,status:st},ex||{});
+  jsv("ugc-requests",[mk("GC-2005",-1,"Menunggu",7),mk("GC-2004",1,"Dijadwalkan",6),mk("GC-2003",0,"Dijemput",8),mk("GC-2002",-6,"Selesai",12,{rt:5}),mk("GC-2001",-12,"Selesai",9,{rt:4})]);
+  jsv("ugc-accounts",[{id:"081200000001",nama:"Siti Rahma",pw}]);
+  jsv("ugc-mitra",[{id:"081200000002",nama:MN,pw,m:{n:MN,k:"Kampus Tamansari",p:[160,125],a:"Jl. Tamansari (contoh)",h:"Senin sampai Sabtu, 08.00–16.00 (Motor roda tiga)",j:"Sampah anorganik, Sampah organik (maggot), Minyak jelantah"}}]);
+  jsv("ugc-stash",{"Kardus":3,"Botol plastik PET bening":1.5});lsSet("ugc-jar",3.5);
+  jsv("ugc-org",[0,1,2].map(i=>({t:d(-i),k:1.2})));jsv("ugc-cb",{"rt 03 rw 05":[["Warga A",5],["Warga B",6.5],["Siti Rahma",3.6]]});jsv("ugc-rtn",{"rt 03 rw 05":"RT 03 RW 05"});jsv("ugc-rtlog",[{t:Date.now()-86400000,k:"rt 01 rw 02",n:"RT 01 RW 02",kg:18.2,by:"Ketua RT"},{t:Date.now()-172800000,k:"rt 05 rw 08",n:"RT 05 RW 08",kg:12.4,by:"Ketua RT"}]);jsv("ugc-pm",{"Mitra Hijau Bandung":{"Kardus":1500,"Botol plastik PET bening":4200}});lsSet("ugc-rt","RT 03 RW 05");
+  jsv("ugc-chat",{"GC-2003":[{f:"admin",n:MN,m:"Halo Bu Siti, saya otw ke lokasi ya.",t:Date.now()-600000},{f:"user",n:"Siti Rahma",m:"Siap, titiknya di depan gerbang.",t:Date.now()-300000}]});
+  jsv("ugc-nf",[{t:Date.now()-60000,m:"Penjemputan GC-2003 sedang berlangsung. Mitra akan mengirim timbangan aktual.",f:"user",r:false},{t:Date.now()-50000,m:"Permintaan baru GC-2005 dari Siti Rahma (7 kg).",f:"admin",to:MN,r:false}]);
+  lsSet("ugc-tur",1);
+  jsv("ugc-session",role==="admin"?{role:"admin",id:"081200000002",nama:MN}:{role:"user",id:"081200000001",nama:"Siti Rahma"});
+  location.reload();
+}
+function resetDemo(){Object.keys(localStorage).filter(k=>k.startsWith("ugc-")).forEach(k=>localStorage.removeItem(k));location.reload()}
+$("#dm1").onclick=()=>demo("user");$("#dm2").onclick=()=>demo("admin");$("#dm0").onclick=resetDemo;
+const PM=jg("ugc-pm",{}),WD=jg("ugc-wd",[]),KT=jg("ugc-ketua",{}),RL=jg("ugc-rtlog",[]);
+function anM(j){return /anorganik/i.test(j)||!/jelantah|organik/i.test(j)}
+function hrg(k){try{const v=$("#mt").value,m=/^Otomatis/.test(v)?near(f.area.value):v,o=PM[m];return o&&o[k]!=null?o[k]:P[k]}catch(e){return P[k]}}
+function hrgM(k){try{const o=S&&S.role==="admin"?PM[S.nama]:null;return o&&o[k]!=null?o[k]:P[k]}catch(e){return P[k]}}
+function wdT(){return WD.reduce((a,x)=>a+x.a,0)}
+function saldo(){return Math.max(0,R.filter(r=>r.status==="Selesai").reduce((a,r)=>a+r.nilai,0)-wdT())}
+function drawCmp(){
+  const k=$("#at").value,w=parseFloat($("#aw").value)||1,a=AR[$("#ar").selectedIndex],c=KP[a];
+  const L=M.map((m,i)=>[i,m,Math.hypot(c[0]-m.p[0],c[1]-m.p[1])]).filter(x=>anM(x[1].j)).sort((x,y)=>x[2]-y[2]).slice(0,4).map(x=>{const o=PM[x[1].n];return[x[0],x[1],x[2],o&&o[k]!=null?o[k]:P[k]]}),best=Math.max(...L.map(x=>x[3]));
+  $("#cmp").innerHTML=`<h3>Perbandingan harga: ${k}</h3><ul class="ls">${L.map(x=>`<li><b>${x[1].n}</b>${x[3]===best&&L.some(y=>y[3]!==best)?` <span class="b s">Harga terbaik</span>`:""}${CL[x[1].n]?` <span class="b x">Tutup</span>`:""}<span class="mu">${rp(x[3])} per kg, ${(x[2]/60).toFixed(1)} km. Estimasi untuk ${w} kg: ${rp(x[3]*w)}.</span></li>`).join("")}</ul><p class="mu">Mitra yang belum mengatur harga memakai harga acuan. Isi berat di kalkulator untuk melihat estimasi.</p>`;
+}
+function drawSD(){
+  $("#sdv").textContent=rp(saldo());$("#sdh").style.display=$("#sdt").value.startsWith("Sedekah")?"none":"";
+  $("#sdl").innerHTML=WD.slice(0,5).map(x=>`<li><b>${x.k} ${rp(x.a)}</b><span class="mu">${esc(x.to)}, ${tm(x.t)}</span></li>`).join("")||`<li class="mu">Belum ada transaksi.</li>`;
+}
+$("#sdt").onchange=drawSD;
+$("#sdb").onclick=()=>{
+  if(needU())return;const t=$("#sdt").value,n=parseInt($("#sdn").value),sed=t.startsWith("Sedekah");
+  if(!(n>=10000)){toast("Minimal Rp10.000.");return}if(n>saldo()){toast("Saldo tidak cukup.");return}
+  if(!sed&&!/^08\d{8,11}$/.test($("#sdp").value.trim())){toast("Isi nomor e-wallet yang benar.");return}
+  WD.unshift({t:Date.now(),k:sed?"Sedekah":"Pencairan",a:n,to:sed?t.slice(9):t+" "+$("#sdp").value.trim()});jsv("ugc-wd",WD);
+  if(sed)lsSet("ugc-bn",ls("ugc-bn")+Math.round(n/1000));
+  notify((sed?"Sedekah ":"Pencairan ")+rp(n)+" ("+WD[0].to+") berhasil diproses.","user");$("#sdn").value="";drawSD();render();
+  toast(sed?"Terima kasih atas sedekahmu! Bonus "+Math.round(n/1000)+" poin.":"Pencairan "+rp(n)+" diproses (simulasi).");
+};
+function drawKT(){
+  const r=rtn(),on=!!(r&&KT[r[0]]);$("#kt").checked=on;$("#kt").disabled=!r;
+  const el=$("#ktp");if(!on){el.innerHTML="";return}
+  const c=cb(r),by={};c.forEach(x=>{by[x[0]]=(by[x[0]]||0)+x[1]});const tot=c.reduce((a,x)=>a+x[1],0),ks=Object.keys(by).sort((a,b)=>by[b]-by[a]);
+  el.innerHTML=`<div class="est" style="margin:10px 0"><b>Panel Ketua ${esc(r[2])}</b><ul class="ls">${ks.length?ks.map(n=>`<li><b>${esc(n)}</b><span class="mu">${by[n].toFixed(1)} kg (${Math.round(by[n]/tot*100)}%)</span></li>`).join(""):`<li class="mu">Belum ada setoran warga.</li>`}</ul><button class="btn" id="ktr" type="button">Ingatkan warga</button> <button class="btn" id="ktc" type="button">Konfirmasi ember dijemput</button></div>`;
+  $("#ktr").onclick=()=>{notify("Ketua "+r[2]+" mengingatkan: ember terisi "+tot.toFixed(1)+" dari "+EMB+" kg. Ayo setor sisa makananmu!","user");toast("Pengingat dikirim ke warga.")};
+  $("#ktc").onclick=()=>{if(tot<=0){toast("Ember masih kosong.");return}RL.unshift({t:Date.now(),k:r[0],n:r[2],kg:tot,by:S.nama});jsv("ugc-rtlog",RL);CB[r[0]]=[];jsv("ugc-cb",CB);lsSet("ugc-bn",ls("ugc-bn")+20);notify("Ketua "+r[2]+" mengonfirmasi ember ("+tot.toFixed(1)+" kg) sudah dijemput. Bonus 20 poin untuk Ketua RT.","user");drawO();drawRK();render();toast("Ember dikosongkan. Bonus 20 poin.")};
+}
+$("#kt").onchange=()=>{const r=rtn();if(!r||needU()){$("#kt").checked=false;return}if($("#kt").checked)KT[r[0]]=true;else delete KT[r[0]];jsv("ugc-ketua",KT);drawKT()};
+function drawRK(){
+  const T={},N={};Object.keys(CB).forEach(k=>{T[k]=(T[k]||0)+CB[k].reduce((a,x)=>a+x[1],0);N[k]=RN[k]||k});
+  RL.forEach(x=>{T[x.k]=(T[x.k]||0)+x.kg;N[x.k]=x.n||N[x.k]||x.k});
+  const L=Object.keys(T).filter(k=>T[k]>0).sort((a,b)=>T[b]-T[a]).slice(0,6),mx=L.length?T[L[0]]:1;
+  $("#lb").innerHTML=L.length?L.map((k,i)=>`<div class="lr"><span>${i+1}. ${esc(N[k])}</span><i style="width:${T[k]/mx*100}%"></i><b>${T[k].toFixed(1)}</b></div>`).join(""):`<p class="mu">Belum ada data. Catat sisa makanan di tab Organik.</p>`;
+}
+function wk0(){const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());const g=d.getUTCDay()||7;d.setUTCDate(d.getUTCDate()-g+1);return d.toISOString().slice(0,10)}
+function drawTW(){
+  const u=!!S&&S.role==="user";$("#tw").hidden=!u;if(!u)return;
+  const s=wk0(),e=new Date(s+"T00:00:00Z");e.setUTCDate(e.getUTCDate()+6);const en=e.toISOString().slice(0,10);
+  const days=new Set(OG.filter(x=>x.t>=s&&x.t<=en).map(x=>x.t)).size,pk=R.some(r=>r.tgl>=s&&r.tgl<=en&&r.status!=="Dibatalkan")||stot()>=MIN,jl=JR>=1||R.some(r=>r.l>0&&r.tgl>=s&&r.tgl<=en);
+  const T=[["Catat sisa makanan 4 hari",Math.min(days,4),4,days>=4],["Tabung 5 kg atau minta 1 penjemputan",pk?1:0,1,pk],["Isi celengan jelantah 1 liter",jl?1:0,1,jl]],done=T.every(t=>t[3]);let got=false;try{got=localStorage.getItem("ugc-wkd")===s}catch(x){}
+  $("#tw").innerHTML=`<h3>Tantangan mingguan</h3><p class="mu" style="margin:0 0 8px">${fd(s)} sampai ${fd(en)}. Selesaikan ketiganya untuk 30 poin hijau.</p><ul class="ls">${T.map(t=>`<li><b>${t[3]?"✅":"⬜"} ${t[0]}</b><div class="pg"><i style="width:${t[1]/t[2]*100}%"></i></div></li>`).join("")}</ul>`+(got?`<p class="mu">Hadiah minggu ini sudah diklaim.</p>`:`<button class="btn" id="twb" type="button"${done?"":" disabled"}>Klaim 30 poin</button>`);
+  const b=$("#twb");if(b)b.onclick=()=>{try{localStorage.setItem("ugc-wkd",s)}catch(x){}lsSet("ugc-bn",ls("ugc-bn")+30);notify("Tantangan mingguan selesai! Kamu dapat 30 poin hijau.","user");render();toast("30 poin hijau diklaim!")};
+}
+$("#mt").onchange=()=>{est();drawMti()};f.area.onchange=()=>{fillMt();est();drawMti()};
+function fillMt(){
+  const a=f.area.value,c=KP[a]||KP["Kampus Tamansari"],cur=$("#mt").value;
+  $("#mt").innerHTML=`<option value="Otomatis (mitra terdekat)">Otomatis (mitra terdekat)</option>`+M.map(m=>({m,d:Math.hypot(c[0]-m.p[0],c[1]-m.p[1])})).sort((x,y)=>x.d-y.d).map(x=>`<option value="${esc(x.m.n)}">${x.m.n} (${(x.d/60).toFixed(1)} km${CL[x.m.n]?", tutup":""})</option>`).join("");
+  if([...$("#mt").options].some(o=>o.value===cur))$("#mt").value=cur;
+  drawMti();
+}
+function drawMti(){
+  const v=$("#mt").value,el=$("#mti");
+  if(!v||/^Otomatis/.test(v)){el.textContent="Sistem memilih mitra terdekat yang sedang buka dan menerima jenis sampahmu. Kamu juga bisa memilih mitra lain dari daftar.";return}
+  const m=M.find(x=>norm(x.n)===norm(v));if(!m){el.textContent="";return}
+  const rs=R.filter(r=>norm(r.mitra)===norm(m.n)&&r.rt),av=rs.length?(rs.reduce((s,r)=>s+r.rt,0)/rs.length).toFixed(1)+" ★ ("+rs.length+" ulasan)":"belum ada ulasan";
+  el.innerHTML=`<b>${m.n}</b> ${CL[m.n]?'<span class="b x">Tutup</span>':'<span class="b s">Buka</span>'}<br>Menerima: ${m.j}. Jam: ${m.h}. Rating: ${av}.`;
+}
+const MB=jg("ugc-mitra",[]);
+function rebuildM(){
+  $("#ml").innerHTML=M.map((m,i)=>`<li><button class="mi" data-i="${i}"><b>${m.n}</b><span class="mu">Melayani area ${m.k}</span></button></li>`).join("");
+  $("#mt").innerHTML=`<option>Otomatis (mitra terdekat)</option>`+M.map(m=>`<option>${m.n}</option>`).join("");
+  drawM();drawN();fillMt();
+}
+$("#mrA").innerHTML=AR.map(a=>`<option>${a}</option>`).join("");
+MB.forEach(x=>M.push(x.m));if(MB.length)rebuildM();
+$("#mb2").onclick=()=>showReg(false);
+$("#hp").onclick=()=>{HM.hidden=true;AU.hidden=false;setRole("admin");showReg(true)};
+$("#mf").addEventListener("submit",async e=>{
+  e.preventDefault();const id=$("#mrH").value.trim(),jn=[...document.querySelectorAll('input[name="mjn"]:checked')].map(c=>c.value);
+  if(!jn.length){$("#mrE").textContent="Pilih minimal satu jenis sampah yang diterima.";return}
+  if(id.toLowerCase()==="mitra"||MB.some(x=>x.id.toLowerCase()===id.toLowerCase())){$("#mrE").textContent="No. HP ini sudah terdaftar sebagai mitra. Silakan masuk.";return}
+  const a=$("#mrA").value,c=KP[a],nm=$("#mrU").value.trim(),cl=(v,lo,hi)=>Math.max(lo,Math.min(hi,Math.round(v)));
+  const rec={id,nama:nm,pw:await hx($("#mrW").value),m:{n:esc(nm),k:a,p:[cl(c[0]+Math.random()*90-45,20,380),cl(c[1]+Math.random()*70-35,20,280)],a:esc($("#mrL").value.trim()),h:esc($("#mrO").value.trim())+" ("+$("#mrR").value+")",j:jn.join(", ")}};
+  MB.push(rec);jsv("ugc-mitra",MB);M.push(rec.m);rebuildM();
+  $("#mf").reset();showReg(false);start({role:"admin",id,nama:nm});notify("Pendaftaran mitra berhasil. Usahamu kini tampil di peta mitra.","admin");toast("Pendaftaran berhasil. Usahamu kini tampil di peta mitra.");
+});
+const BARS={user:[["dashboard","🏠","Beranda"],["anorganik","🧴","Anorganik"],["organik","🍃","Organik"],["jelantah","🛢️","Jelantah"]],admin:[["admin","📊","Beranda"],["kelola","📋","Permintaan"],["laporan","📈","Laporan"]]};
+BARS.guest=BARS.user;
+const MORE={user:[["ajukan","🚛","Ajukan jemput"],["peta","🗺️","Peta mitra"],["tukar","🎁","Tukar poin"],["edukasi","📚","Edukasi"],["riwayat","🕑","Riwayat"],["harga","💰","Harga"],["tentang","ℹ️","Tentang"]],guest:[["peta","🗺️","Peta mitra"],["edukasi","📚","Edukasi"],["harga","💰","Harga"],["ajukan","🔒","Ajukan jemput"],["tentang","ℹ️","Tentang"]],admin:[["tentang","ℹ️","Tentang"],["atur","⚙️","Atur harga"],["peta","🗺️","Peta mitra"]]};
+function buildBar(){
+  const r=S.role,lk=x=>`<a href="#${x[0]}" data-v="${x[0]}"><i>${x[1]}</i><span>${x[2]}</span></a>`;
+  $("#fb").innerHTML=BARS[r].map(lk).join("")+`<button id="mxo" type="button" aria-label="Menu lainnya"><i>☰</i><span>Lainnya</span></button>`;
+  $("#mxb").innerHTML=`<p class="mu" style="margin:0 0 12px"><b>${esc(S.nama)}</b>, ${r==="admin"?"mitra pengepul":r==="guest"?"tamu":"pengguna"}</p><div class="mg">${MORE[r].map(lk).join("")}</div><div class="mrow"><button class="gh" id="mth" type="button">${isDark()?"☀️ Tema terang":"🌙 Tema gelap"}</button><button class="gh" id="mlo" type="button">${r==="guest"?"Masuk atau daftar":"Keluar"}</button></div>`;
+  $("#mxo").onclick=()=>{$("#mx").hidden=!$("#mx").hidden};
+  $("#mth").onclick=()=>{const t=isDark()?"light":"dark";document.documentElement.dataset.theme=t;try{localStorage.setItem("ugc-theme",t)}catch(e){}paintTh();$("#mth").textContent=isDark()?"☀️ Tema terang":"🌙 Tema gelap"};
+  $("#mlo").onclick=()=>{$("#mx").hidden=true;$("#lo").click()};
+  route();
+}
+$("#mx").onclick=e=>{if(e.target.id==="mx")$("#mx").hidden=true};
+calcA();calcO();drawA();drawN();drawO();drawJ();drawS();lbl();fillMt();drawMti();
+</script>
+</body>
+</html>
